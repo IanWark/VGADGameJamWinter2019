@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
-[ext_resource path="res://scenes/event_1_a.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/event_1_b.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/event_0_jam.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/event_unknown.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/events/event_1_a.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/events/event_1_b.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/events/event_0_jam.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/events/event_unknown.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Gradient" id=1]
 
@@ -29,7 +29,7 @@ flags = 4
 gradient = SubResource( 3 )
 width = 2048
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]

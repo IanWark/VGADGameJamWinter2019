@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/events/event.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/events/event_0_jam.gd" type="Script" id=2]
+
+[node name="event_0_jam" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/event_unknown.png-200fa2469596ebd903a348fadd9bf9c0.stex"
+path="res://.import/event_unknown.png-ed6babfe5824679bc9022f18256e25fc.stex"
 
 [deps]
 
-source_file="res://art/event_unknown.png"
-dest_files=[ "res://.import/event_unknown.png-200fa2469596ebd903a348fadd9bf9c0.stex" ]
+source_file="res://art/events/event_unknown.png"
+dest_files=[ "res://.import/event_unknown.png-ed6babfe5824679bc9022f18256e25fc.stex" ]
 
 [params]
 

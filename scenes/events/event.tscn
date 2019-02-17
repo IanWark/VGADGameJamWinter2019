@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://art/event_background.png" type="Texture" id=1]
-[ext_resource path="res://scripts/sprite.gd" type="Script" id=2]
-[ext_resource path="res://art/event_0_jam.png" type="Texture" id=3]
+[ext_resource path="res://scripts/event.gd" type="Script" id=2]
+[ext_resource path="res://art/events/event_0_jam.png" type="Texture" id=3]
 [ext_resource path="res://art/pin.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]

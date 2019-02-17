@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/events/event.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/events/event_unknown.gd" type="Script" id=2]
+[ext_resource path="res://art/events/event_unknown.png" type="Texture" id=3]
+
+[node name="event_unknown" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Image" parent="." index="1"]
+
+texture = ExtResource( 3 )
+
+
