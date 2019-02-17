@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="StringJamGame"
-run/main_scene="res://scenes/GameScreen.tscn"
+run/main_scene="res://scenes/game_screen.tscn"
 config/icon="res://icon.png"
 
 [display]
