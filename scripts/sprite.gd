@@ -19,7 +19,7 @@ onready var main = get_tree().get_root().get_node("Main")
 
 # Click vs Drag timer
 var timer= 0
-var timer_wait_time = 0.05
+var timer_wait_time = 0.06
 
 func _process(delta):
 	if mouse_in && Input.is_action_just_pressed("right_click"):
@@ -27,7 +27,7 @@ func _process(delta):
 			main.view_item(scene)
 
 	elif (dragging && Input.is_action_pressed("left_click")): #While dragging
-		timer = 0
+		timer += delta;
 		
 		if can_drag:
 			mouse_pos = get_viewport().get_mouse_position()
@@ -46,15 +46,12 @@ func _process(delta):
 			mouse_pos = get_viewport().get_mouse_position()
 			mouse_to_center = restaVectores(draggable_pos, mouse_pos)
 			mouse_to_center_set = true
-		#We set the dragging to true if it's allowed to if enough time has elapsed
-		timer += delta;
-		print(timer)
-		
-		if (timer >= timer_wait_time):
-			print("drag")
-			dragging = can_drag
+		#We set the dragging to true
+		dragging = can_drag
 			
 	else: #When we release
+		if timer > 0 && timer <= timer_wait_time:
+			print("click")
 		timer = 0
 		mouse_to_center_set = false #Set this to false so we can set mouse_to_center again
 		dragging = false
