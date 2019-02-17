@@ -98,15 +98,41 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
+_sections_unfolded = [ "Size Flags" ]
 
-[node name="Title" type="Label" parent="Newspaper/MarginContainer/VBoxContainer" index="0"]
+[node name="Paper Name" type="Label" parent="Newspaper/MarginContainer/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 402.0
-margin_bottom = 45.0
+margin_bottom = 41.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Capital Tribune"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
+
+[node name="Headline" type="Label" parent="Newspaper/MarginContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 45.0
+margin_right = 402.0
+margin_bottom = 86.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -117,18 +143,19 @@ size_flags_stretch_ratio = 0.1
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "PHOENIX SAPPHIRE STOLEN!"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
 
-[node name="Columns" type="HBoxContainer" parent="Newspaper/MarginContainer/VBoxContainer" index="1"]
+[node name="Columns" type="HBoxContainer" parent="Newspaper/MarginContainer/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 49.0
+margin_top = 90.0
 margin_right = 402.0
 margin_bottom = 503.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -147,7 +174,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 199.0
-margin_bottom = 454.0
+margin_bottom = 413.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -164,7 +191,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 199.0
-margin_bottom = 177.0
+margin_bottom = 161.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -183,9 +210,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 181.0
+margin_top = 165.0
 margin_right = 199.0
-margin_bottom = 454.0
+margin_bottom = 413.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -222,7 +249,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 203.0
 margin_right = 402.0
-margin_bottom = 454.0
+margin_bottom = 413.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
