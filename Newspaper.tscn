@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://fonts/tox-typewriter/Tox Typewriter.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://art/newspaper_img.png" type="Texture" id=2]
+[ext_resource path="res://Newspaper.gd" type="Script" id=1]
+[ext_resource path="res://fonts/tox-typewriter/Tox Typewriter.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://art/newspaper_img.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 32
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="HBoxContainer" type="HBoxContainer" index="0"]
@@ -26,6 +27,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
+script = ExtResource( 1 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="BackgroundLeft" type="ColorRect" parent="." index="0"]
@@ -199,7 +201,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.65
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Size Flags" ]
