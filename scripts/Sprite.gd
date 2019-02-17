@@ -39,13 +39,11 @@ func _process(delta):
 
 func _on_Area2D_mouse_entered():
 	mouse_in = true
-	print(mouse_in)
-	get_parent()._add_draggable(self) #Add the draggable to the draggable list
+	get_tree().get_root().get_node("Main")._add_draggable(self) #Add the draggable to the draggable list
 
 func _on_Area2D_mouse_exited():
 	mouse_in = false
-	print(mouse_in)
-	get_parent()._remove_draggable(self)  #Remove the draggable from the draggable list
+	get_tree().get_root().get_node("Main")._remove_draggable(self)  #Remove the draggable from the draggable list
 
 func restaVectores(v1, v2): #vector substraction
 	return Vector2(v1.x - v2.x, v1.y - v2.y)
