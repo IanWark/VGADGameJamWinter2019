@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Event_0_JAM.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/event_1_a.png" type="Texture" id=2]
+
+[node name="Event_1_a" instance=ExtResource( 1 )]
+
+scale = Vector2( 1, 1 )
+
+[node name="Image" parent="." index="1"]
+
+texture = ExtResource( 2 )
+
+[node name="Label" parent="." index="2"]
+
+text = "He went in through the roof."
+
+

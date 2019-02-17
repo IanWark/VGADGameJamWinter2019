@@ -10,10 +10,12 @@
 custom_solver_bias = 0.0
 extents = Vector2( 260, 340 )
 
-[node name="Event" type="Sprite" index="0"]
+[node name="Event" type="Sprite"]
 
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 

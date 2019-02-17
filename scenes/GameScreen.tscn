@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Event.tscn" type="PackedScene" id=2]
-
-
-
+[ext_resource path="res://scenes/Event_0_JAM.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Event_1_a.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Art/event_background.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Sprite.gd" type="Script" id=5]
 
 [sub_resource type="Gradient" id=1]
 
@@ -29,13 +29,14 @@ flags = 4
 gradient = SubResource( 3 )
 width = 2048
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
 
 [node name="RectBorder" type="TextureRect" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -72,10 +73,16 @@ expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Margin", "Mouse" ]
 
-[node name="Event" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Event_0_JAM" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 301.651, 251.684 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 223.16, 189.686 )
+
+[node name="Event_1_a" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 638.797, 320.793 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 
