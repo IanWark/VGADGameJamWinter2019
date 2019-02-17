@@ -23,7 +23,7 @@ flags = 4
 gradient = SubResource( 3 )
 width = 2048
 
-[node name="MarginContainer" type="MarginContainer" index="0"]
+[node name="MarginContainer" type="MarginContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -64,6 +64,7 @@ size_flags_vertical = 1
 texture = SubResource( 2 )
 expand = true
 stretch_mode = 0
+_sections_unfolded = [ "Material" ]
 
 [node name="RectBoardBG" type="TextureRect" parent="CanvasLayer/RectBorder" index="0"]
 
