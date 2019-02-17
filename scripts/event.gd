@@ -33,3 +33,9 @@ func check_for_submission():
 			else:
 				# Move event down and place it a bit randomly to avoid overlap
 				position = area_parent.global_position + Vector2(randi()%41-21, 200 + randi()%41-21)
+
+# Called constantly whenever mouse is released
+func mouse_released():
+	check_for_submission()
+	.mouse_released()
+

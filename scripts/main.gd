@@ -55,7 +55,7 @@ class DraggablesSorter: #Custom sorter
 
 func _add_draggable(sprt): #Add draggable to list
 	# Don't add if object is a locked event
-	if sprt.locked_event != null && sprt.locked_event == true:
+	if sprt.get_class() == "event" && sprt.locked_event == true:
 		return
 	if not draggables.find(sprt) == -1: #If draggable exists
 		return #Do nothing

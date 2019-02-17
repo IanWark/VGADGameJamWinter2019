@@ -72,15 +72,17 @@ func dragging_checks(delta):
 		z_index = UPPER_Z_INDEX
 		dragging = can_drag
 			
-	else: # Called constantly whenever mouse is released
-		check_for_submission()  # Ideally this would only be called once right after releasing mouse
-		
-		if timer > 0 && timer <= timer_wait_time:
-			print("click")
-		timer = 0
-		mouse_to_center_set = false #Set this to false so we can set mouse_to_center again
-		z_index = DEFAULT_Z_INDEX
-		dragging = false
+	else: 
+		mouse_released()
+
+# Called constantly whenever mouse is released
+func mouse_released():
+	if timer > 0 && timer <= timer_wait_time:
+		print("click")
+	timer = 0
+	mouse_to_center_set = false #Set this to false so we can set mouse_to_center again
+	z_index = DEFAULT_Z_INDEX
+	dragging = false
 
 func _on_Area2D_mouse_entered():
 	if !being_viewed:

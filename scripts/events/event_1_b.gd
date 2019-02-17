@@ -1,8 +1,7 @@
 extends "res://scripts/event.gd"
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	._ready()
 	scene = "res://scenes/events/event_1_b.tscn"
 
 #func _process(delta):
