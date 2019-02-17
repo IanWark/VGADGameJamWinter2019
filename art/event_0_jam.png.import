@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/event_0_JAM.png-eefbe667708e9d471e9c1e985e98ba63.stex"
+path="res://.import/event_0_jam.png-8f3042db1745a8db7dc63d26e94041da.stex"
 
 [deps]
 
-source_file="res://art/event_0_JAM.png"
-dest_files=[ "res://.import/event_0_JAM.png-eefbe667708e9d471e9c1e985e98ba63.stex" ]
+source_file="res://art/event_0_jam.png"
+dest_files=[ "res://.import/event_0_jam.png-8f3042db1745a8db7dc63d26e94041da.stex" ]
 
 [params]
 
