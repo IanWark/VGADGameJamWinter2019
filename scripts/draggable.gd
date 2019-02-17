@@ -25,6 +25,10 @@ onready var main = get_tree().get_root().get_node("Main")
 var timer= 0
 var timer_wait_time = 0.06
 
+# This is so we can check if an object is a clue
+func get_class():
+	return "draggable"
+
 func _ready():
 	if being_viewed:
 		pin.hide()

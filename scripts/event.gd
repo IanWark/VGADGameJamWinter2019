@@ -6,6 +6,10 @@ var locked_event = false
 
 onready var anim_player = $AnimationPlayer
 
+# This is so we can check if an object is a clue
+func get_class():
+	return "event"
+
 func _process(delta):
 	view_item_check()
 	if !locked_event:
