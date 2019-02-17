@@ -1,28 +1,64 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/events/event.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/events/event_unknown.gd" type="Script" id=2]
 [ext_resource path="res://art/events/event_unknown.png" type="Texture" id=3]
+[ext_resource path="res://art/event_background.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "halo"
+length = 10.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("halo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 5, 7, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.957031, 0.845463, 0.242996, 0 ), Color( 0.957031, 0.845463, 0.242996, 0.784314 ), Color( 0.957031, 0.845463, 0.242996, 0.392157 ), Color( 0.957031, 0.845463, 0.242996, 0.784314 ), Color( 0.957031, 0.845463, 0.242996, 0.392157 ) ]
+}
 
 [node name="event_unknown" instance=ExtResource( 1 )]
 
-modulate = Color( 1, 1, 1, 0.501961 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Image" parent="." index="1"]
+[node name="background" parent="." index="0"]
 
+modulate = Color( 1, 1, 1, 0.501961 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="Image" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.501961 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="Label" parent="." index="2"]
+[node name="Label" parent="." index="3"]
 
 visible = false
 _sections_unfolded = [ "Visibility", "custom_colors" ]
 
-[node name="Pin" parent="." index="3"]
+[node name="Pin" parent="." index="4"]
 
 visible = false
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="halo" type="Sprite" parent="." index="5"]
+
+modulate = Color( 0.957031, 0.845463, 0.242996, 0.489771 )
+scale = Vector2( 1.1, 1.1 )
+z_index = -1
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="AnimationPlayer" parent="." index="6"]
+
+anims/halo = SubResource( 1 )
 
 

@@ -9,8 +9,13 @@ var dragging = false
 var top_set = false
 var viewed_item = null
 
+var event_unknown
+
 onready var item_view_bg = $ItemViewLayer/ItemViewBG
 onready var center_container = $ItemViewLayer/ItemViewBG/CenterContainer
+
+func _ready():
+	event_unknown = $"Locked Events/event_sequence/event_pos_1/Control/event_unknown"
 
 func _process(delta):
 	if Input.is_action_pressed("left_click"): #When we click
@@ -34,6 +39,8 @@ func _process(delta):
 		top_draggable = null #Top draggable to null
 		top_set = false
 		dragging = false
+		if not event_unknown == null:
+			event_unknown.stop_halo()
 
 # Called when an item is right clicked and wants to be viewed
 func view_item(scene):

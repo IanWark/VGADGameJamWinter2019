@@ -30,6 +30,7 @@ func check_for_submission():
 				anim_player.play("fade_in")
 				set_locked()
 				area_parent.queue_free()
+				main.event_unknown = null
 			else:
 				# Move event down and place it a bit randomly to avoid overlap
 				position = area_parent.global_position + Vector2(randi()%41-21, 200 + randi()%41-21)
