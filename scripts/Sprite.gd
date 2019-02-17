@@ -9,6 +9,8 @@ var mouse_to_center
 var draggable_pos
 var mouse_pos
 
+onready var pin = $Pin
+
 func _process(delta):
 	
 	if (mouse_in && Input.is_action_pressed("left_click")): #When clicking
