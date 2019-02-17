@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/event_1_a.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/event_1_b.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/event_0_jam.tscn" type="PackedScene" id=4]
-
+[ext_resource path="res://scenes/event_unknown.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Gradient" id=1]
 
@@ -116,9 +116,99 @@ size_flags_vertical = 1
 color = Color( 0.151566, 0.356856, 0.902344, 1 )
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Event_0_JAM" parent="Locked Events" index="1" instance=ExtResource( 4 )]
+[node name="event_sequence" type="HBoxContainer" parent="Locked Events" index="1"]
 
-position = Vector2( 76.1601, 94.7941 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_right = -20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Mouse" ]
+
+[node name="event_pos_0" type="CenterContainer" parent="Locked Events/event_sequence" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 160.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 160, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Control" type="Control" parent="Locked Events/event_sequence/event_pos_0" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 95.0
+margin_right = 80.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Event_0_JAM" parent="Locked Events/event_sequence/event_pos_0/Control" index="0" instance=ExtResource( 4 )]
+
+[node name="event_pos_1" type="CenterContainer" parent="Locked Events/event_sequence" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 160, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Mouse", "Size Flags" ]
+
+[node name="Control" type="Control" parent="Locked Events/event_sequence/event_pos_1" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 95.0
+margin_right = 80.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Event_unknown" parent="Locked Events/event_sequence/event_pos_1/Control" index="0" instance=ExtResource( 5 )]
 
 [node name="Line2D" type="Line2D" parent="Locked Events" index="2"]
 
