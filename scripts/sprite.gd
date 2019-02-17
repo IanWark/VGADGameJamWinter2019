@@ -1,7 +1,7 @@
 extends Node2D
 
 var can_drag = true
-var viewed_item = false
+var being_viewed = false
 
 var mouse_in = false
 var dragging = false
@@ -20,6 +20,15 @@ onready var main = get_tree().get_root().get_node("Main")
 # Click vs Drag timer
 var timer= 0
 var timer_wait_time = 0.06
+
+func _ready():
+	if being_viewed:
+		pin.hide()
+
+func set_to_being_viewed():
+	being_viewed = true
+	scale = Vector2(0.75,0.75)
+	# Any onready vars need to be changed in ready
 
 func _process(delta):
 	if mouse_in && Input.is_action_just_pressed("right_click"):
@@ -57,12 +66,12 @@ func _process(delta):
 		dragging = false
 
 func _on_Area2D_mouse_entered():
-	if !viewed_item:
+	if !being_viewed:
 		mouse_in = true
 		main._add_draggable(self) #Add the draggable to the draggable list
 
 func _on_Area2D_mouse_exited():
-	if !viewed_item:
+	if !being_viewed:
 		mouse_in = false
 		main._remove_draggable(self)  #Remove the draggable from the draggable list
 
