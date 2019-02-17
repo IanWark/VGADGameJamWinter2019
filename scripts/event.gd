@@ -1,5 +1,8 @@
 extends Node2D
 
+const DEFAULT_Z_INDEX = 1
+const UPPER_Z_INDEX = 2
+
 var can_drag = true
 var being_viewed = false
 var locked_event = false
@@ -58,6 +61,7 @@ func _process(delta):
 				mouse_to_center = restaVectores(draggable_pos, mouse_pos)
 				mouse_to_center_set = true
 			#We set the dragging to true
+			z_index = UPPER_Z_INDEX
 			dragging = can_drag
 				
 		else: # Called constantly whenever mouse is released
@@ -65,6 +69,7 @@ func _process(delta):
 				print("click")
 			timer = 0
 			mouse_to_center_set = false #Set this to false so we can set mouse_to_center again
+			z_index = DEFAULT_Z_INDEX
 			dragging = false
 
 func set_event_locked():
