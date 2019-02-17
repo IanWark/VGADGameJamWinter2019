@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Event_0_JAM.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Event_1_a.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Art/event_background.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/Sprite.gd" type="Script" id=5]
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/event_0_JAM.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/event_1_a.tscn" type="PackedScene" id=3]
+
+
 
 [sub_resource type="Gradient" id=1]
 
@@ -29,14 +29,13 @@ flags = 4
 gradient = SubResource( 3 )
 width = 2048
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
 
 [node name="RectBorder" type="TextureRect" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -77,12 +76,42 @@ _sections_unfolded = [ "Margin", "Mouse" ]
 
 position = Vector2( 223.16, 189.686 )
 
-[node name="Event_1_a" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Event" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 638.797, 320.793 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 4 )
-script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 549, 225 )
+
+[node name="ItemViewBG" type="ColorRect" parent="." index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.627451 )
+
+[node name="CenterContainer" type="CenterContainer" parent="ItemViewBG" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -0.5
+margin_top = -0.5
+margin_right = 0.5
+margin_bottom = 0.5
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 

@@ -7,16 +7,25 @@ var draggables = []
 var top_draggable = null
 var dragging = false
 var top_set = false
+var viewed_item = null
+
+onready var item_view_bg = $ItemViewBG
+onready var center_container = $ItemViewBG/CenterContainer
 
 func _process(delta):
 	if Input.is_action_pressed("left_click"): #When we click
-		print("clicked")
-		if not top_set: #If there's no top we set one
-			top_draggable = _top_draggable() #Get the draggable on top (largest z_index)
-			if not top_draggable == null: #If there's a draggable
-				top_draggable.can_drag = true #We set can_drag to true
-			top_set = true
-		dragging = true #We are dragging now
+		if viewed_item != null:
+			# Stop viewing selected item
+			item_view_bg.visible = false
+			viewed_item.queue_free()
+			viewed_item = null
+		else:
+			if not top_set: #If there's no top we set one
+				top_draggable = _top_draggable() #Get the draggable on top (largest z_index)
+				if not top_draggable == null: #If there's a draggable
+					top_draggable.can_drag = true #We set can_drag to true
+				top_set = true
+			dragging = true #We are dragging now
 	if dragging && Input.is_action_pressed("left_click"): #If mouse dragging
 		pass
 	else: #When we release
@@ -25,6 +34,19 @@ func _process(delta):
 		top_draggable = null #Top draggable to null
 		top_set = false
 		dragging = false
+
+# Called when an item is right clicked and wants to be viewed
+func view_item(scene):
+	if viewed_item == null:
+		# view item under cursor
+		# first create a larger version of the object 
+		viewed_item = load(scene).instance()
+		viewed_item.scale = Vector2(0.75,0.75)
+		viewed_item.viewed_item = true
+		# place object in center
+		center_container.add_child(viewed_item)
+		# darken screen and show object
+		item_view_bg.visible = true
 
 class DraggablesSorter: #Custom sorter
 	static func z_index(a, b): #Sort by z_index
