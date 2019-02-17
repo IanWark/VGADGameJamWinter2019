@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/event_1_b.gd" type="Script" id=2]
 [ext_resource path="res://art/event_1_b.png" type="Texture" id=3]
 
-[node name="Event_1_b" instance=ExtResource( 1 )]
+[node name="event_1_b" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
