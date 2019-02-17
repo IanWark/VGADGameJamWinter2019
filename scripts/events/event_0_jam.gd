@@ -4,6 +4,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	scene = "res://scenes/events/event_0_jam.tscn"
+	set_locked()
 	locked_event = true
 
 #func _process(delta):

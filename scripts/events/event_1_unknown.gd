@@ -5,4 +5,4 @@ func _ready():
 	# Initialization here
 	scene = "res://scenes/events/event_1_unknown.tscn"
 	correct_event = "event_1_a"
-	locked_event = true
+	set_locked()
