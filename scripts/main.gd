@@ -9,8 +9,8 @@ var dragging = false
 var top_set = false
 var viewed_item = null
 
-onready var item_view_bg = $ItemViewBG
-onready var center_container = $ItemViewBG/CenterContainer
+onready var item_view_bg = $ItemViewLayer/ItemViewBG
+onready var center_container = $ItemViewLayer/ItemViewBG/CenterContainer
 
 func _process(delta):
 	if Input.is_action_pressed("left_click"): #When we click

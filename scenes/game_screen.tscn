@@ -29,7 +29,7 @@ flags = 4
 gradient = SubResource( 3 )
 width = 2048
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
@@ -221,9 +221,16 @@ texture_mode = 16
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="ItemViewBG" type="ColorRect" parent="." index="4"]
+[node name="ItemViewLayer" type="CanvasLayer" parent="." index="4"]
 
-editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="ItemViewBG" type="ColorRect" parent="ItemViewLayer" index="0"]
+
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -236,8 +243,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0, 0, 0, 0.627451 )
+_sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Mouse", "Rect", "Size Flags" ]
 
-[node name="CenterContainer" type="CenterContainer" parent="ItemViewBG" index="0"]
+[node name="CenterContainer" type="CenterContainer" parent="ItemViewLayer/ItemViewBG" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.5
