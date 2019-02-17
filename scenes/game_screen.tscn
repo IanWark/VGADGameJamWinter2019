@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/events/event_0_jam.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/events/event_unknown.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/events/event_1_a.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/events/event_1_b.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/events/event_1_unknown.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/event_background.png" type="Texture" id=4]
+[ext_resource path="res://scenes/events/event_1_a.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/events/event_1_b.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Gradient" id=1]
 
@@ -29,7 +30,7 @@ flags = 4
 gradient = SubResource( 3 )
 width = 2048
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
@@ -202,6 +203,9 @@ _sections_unfolded = [ "Mouse" ]
 
 [node name="event_unknown" parent="Locked Events/event_sequence/event_pos_1/Control" index="0" instance=ExtResource( 3 )]
 
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
 [node name="Line2D" type="Line2D" parent="Locked Events" index="2"]
 
 position = Vector2( 495, 300.25 )
@@ -213,11 +217,11 @@ texture_mode = 16
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="event_1_a" parent="." index="2" instance=ExtResource( 4 )]
+[node name="event_1_a" parent="." index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 217.887, 318.663 )
 
-[node name="event_1_b" parent="." index="3" instance=ExtResource( 5 )]
+[node name="event_1_b" parent="." index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 448.124, 322.895 )
 

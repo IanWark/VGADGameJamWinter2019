@@ -2,6 +2,7 @@ extends Node2D
 
 const DEFAULT_Z_INDEX = 1
 const UPPER_Z_INDEX = 2
+const EVENT_UNKNOWN = "event_unknown"
 
 var can_drag = true
 var being_viewed = false
@@ -19,6 +20,7 @@ var mouse_pos
 var scene = null
 
 onready var pin = $Pin
+onready var area = $Area2D
 onready var main = get_tree().get_root().get_node("Main")
 
 # Click vs Drag timer
@@ -65,6 +67,8 @@ func _process(delta):
 			dragging = can_drag
 				
 		else: # Called constantly whenever mouse is released
+			check_for_submission()  # Ideally this would only be called once right after releasing mouse
+			
 			if timer > 0 && timer <= timer_wait_time:
 				print("click")
 			timer = 0
@@ -75,6 +79,20 @@ func _process(delta):
 func set_event_locked():
 	locked_event = true
 	main._remove_draggable(self)
+
+func check_for_submission():
+	var overlapping = area.get_overlapping_areas()
+	for area in overlapping:
+		var area_parent = area.get_parent()
+		if area_parent.get_name() == EVENT_UNKNOWN:
+			if area_parent.submit(self):
+				# Move event to submitted area
+				position = area_parent.global_position
+				set_event_locked()
+			else:
+				# Move event down and place it a bit randomly to avoid overlap
+				position = area_parent.global_position + Vector2(randi()%41-21, 200 + randi()%41-21)
+
 
 func _on_Area2D_mouse_entered():
 	if !being_viewed:

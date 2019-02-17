@@ -1,12 +1,14 @@
 extends "res://scripts/event.gd"
 
+var correct_event # must be overwritten with what event is the solution
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	scene = "res://scenes/events/event_unknown.tscn"
 	locked_event = true
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+# Event submits itself
+func submit(event):
+	return event.get_name() == correct_event
+		
