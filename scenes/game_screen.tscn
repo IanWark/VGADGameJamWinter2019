@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/events/event_0_jam.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/events/event_1_unknown.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/events/event_1_a.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/events/event_1_b.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/clue.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Gradient" id=1]
 
@@ -221,7 +222,11 @@ position = Vector2( 217.887, 318.663 )
 
 position = Vector2( 448.124, 322.895 )
 
-[node name="ItemViewLayer" type="CanvasLayer" parent="." index="4"]
+[node name="Sprite" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 680.169, 322.896 )
+
+[node name="ItemViewLayer" type="CanvasLayer" parent="." index="5"]
 
 editor/display_folded = true
 layer = 1

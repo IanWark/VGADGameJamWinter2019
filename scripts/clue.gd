@@ -4,3 +4,7 @@ extends "res://scripts/draggable.gd"
 func get_class():
 	return "clue"
 
+func _ready():
+	._ready()
+	scene = "res://scenes/clue.tscn"
+	
