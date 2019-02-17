@@ -11,9 +11,9 @@ config_version=3
 [application]
 
 config/name="StringJamGame"
-run/main_scene="res://MainMenu.tscn"
-boot_splash/image="res://splash.png"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/MainMenu.tscn"
+boot_splash/image="res://art/splash.png"
+config/icon="res://art/icon.png"
 
 [display]
 

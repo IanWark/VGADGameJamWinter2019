@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends MarginContainer
 
 # class member variables go here, for example:
 # var a = 2
@@ -14,7 +14,7 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func _input(event):
-   # Change scene to game screen
-   if event is InputEventMouseButton:
-       get_tree().change_scene("res://GameScreen.tscn")
+
+func _on_Button_button_up():
+	# Change to game scene
+	get_tree().change_scene("res://scenes/Newspaper.tscn")
