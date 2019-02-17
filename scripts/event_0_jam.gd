@@ -4,6 +4,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	scene = "res://scenes/event_0_jam.tscn"
+	locked_event = true
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
