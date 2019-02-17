@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://fonts/tox-typewriter/Tox Typewriter.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://fonts/tox-typewriter/Tox Typewriter.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 64
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="MarginContainer" type="MarginContainer" index="0"]
@@ -24,6 +25,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
@@ -95,5 +97,7 @@ text = "PLAY"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[connection signal="button_up" from="CanvasLayer/CenterContainer/Button" to="." method="_on_Button_button_up"]
 
 
