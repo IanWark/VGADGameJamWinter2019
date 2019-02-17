@@ -60,22 +60,30 @@ func _process(delta):
 			#We set the dragging to true
 			dragging = can_drag
 				
-		else: #When we release
+		else: # Called constantly whenever mouse is released
 			if timer > 0 && timer <= timer_wait_time:
 				print("click")
 			timer = 0
 			mouse_to_center_set = false #Set this to false so we can set mouse_to_center again
 			dragging = false
 
+func set_event_locked():
+	locked_event = true
+	main._remove_draggable(self)
+
 func _on_Area2D_mouse_entered():
 	if !being_viewed:
 		mouse_in = true
-		main._add_draggable(self) #Add the draggable to the draggable list
+		
+		if !locked_event:
+			main._add_draggable(self) #Add the draggable to the draggable list
 
 func _on_Area2D_mouse_exited():
 	if !being_viewed:
 		mouse_in = false
-		main._remove_draggable(self)  #Remove the draggable from the draggable list
+		
+		if !locked_event:
+			main._remove_draggable(self)  #Remove the draggable from the draggable list
 
 func restaVectores(v1, v2): #vector substraction
 	return Vector2(v1.x - v2.x, v1.y - v2.y)
