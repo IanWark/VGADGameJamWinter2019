@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/event_1_a.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/event_0_jam.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/event_1_b.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/event_0_jam.tscn" type="PackedScene" id=4]
+
 
 [sub_resource type="Gradient" id=1]
 
@@ -68,13 +70,17 @@ size_flags_vertical = 1
 texture = SubResource( 4 )
 expand = true
 stretch_mode = 0
-_sections_unfolded = [ "Margin", "Mouse" ]
+_sections_unfolded = [ "Mouse" ]
 
-[node name="Event" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Event_1_a" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 515, 369 )
+position = Vector2( 217.887, 318.663 )
 
-[node name="Submitted Events" type="Container" parent="." index="2"]
+[node name="Event_1_b" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 448.124, 322.895 )
+
+[node name="Locked Events" type="Container" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -86,13 +92,13 @@ margin_right = -20.0
 margin_bottom = 210.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 0
+mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Margin", "Rect" ]
+_sections_unfolded = [ "Mouse" ]
 
-[node name="ColorRect" type="ColorRect" parent="Submitted Events" index="0"]
+[node name="ColorRect" type="ColorRect" parent="Locked Events" index="0"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -110,21 +116,22 @@ size_flags_vertical = 1
 color = Color( 0.151566, 0.356856, 0.902344, 1 )
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Event_0_JAM" parent="Submitted Events" index="1" instance=ExtResource( 3 )]
+[node name="Event_0_JAM" parent="Locked Events" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 76.1601, 94.7941 )
 
-[node name="Line2D" type="Line2D" parent="Submitted Events" index="2"]
+[node name="Line2D" type="Line2D" parent="Locked Events" index="2"]
 
 position = Vector2( 495, 300.25 )
 scale = Vector2( 0.25, 5.125 )
 points = PoolVector2Array( 0, 0, 0, 0 )
 width = 10.0
 default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = 16
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="ItemViewBG" type="ColorRect" parent="." index="3"]
+[node name="ItemViewBG" type="ColorRect" parent="." index="4"]
 
 editor/display_folded = true
 visible = false
