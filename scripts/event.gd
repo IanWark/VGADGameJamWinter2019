@@ -21,6 +21,7 @@ var scene = null
 
 onready var pin = $Pin
 onready var area = $Area2D
+onready var anim_player = $AnimationPlayer
 onready var main = get_tree().get_root().get_node("Main")
 
 # Click vs Drag timer
@@ -88,7 +89,9 @@ func check_for_submission():
 			if area_parent.submit(self):
 				# Move event to submitted area
 				position = area_parent.global_position
+				anim_player.play("fade_in")
 				set_event_locked()
+				area_parent.queue_free()
 			else:
 				# Move event down and place it a bit randomly to avoid overlap
 				position = area_parent.global_position + Vector2(randi()%41-21, 200 + randi()%41-21)
