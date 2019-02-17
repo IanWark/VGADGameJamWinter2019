@@ -32,6 +32,11 @@ func get_class():
 func _ready():
 	if being_viewed:
 		pin.hide()
+	
+	# Prevents multidrag
+	if !being_viewed:
+		mouse_in = false
+		main._remove_draggable(self)
 
 func set_to_being_viewed():
 	being_viewed = true
