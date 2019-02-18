@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/clues/clue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fonts/Tox Typewriter.ttf" type="DynamicFontData" id=2]
@@ -11,20 +11,25 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 250, 270 )
+
 [node name="damage" instance=ExtResource( 1 )]
 
 texture = null
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -250.0
-margin_top = -250.0
-margin_right = 249.0
-margin_bottom = 249.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -249.5
+margin_top = -265.0
+margin_right = 249.5
+margin_bottom = 265.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -32,6 +37,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 1, 1, 0.94902, 1 )
+_sections_unfolded = [ "Rect" ]
 
 [node name="Label" type="Label" parent="." index="1"]
 
@@ -40,9 +46,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -250.0
-margin_top = -225.0
+margin_top = -250.0
 margin_right = 250.0
-margin_bottom = -191.0
+margin_bottom = -216.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -65,9 +71,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -243.0
-margin_top = -248.0
+margin_top = -265.0
 margin_right = 254.0
-margin_bottom = 249.0
+margin_bottom = 265.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 2
@@ -79,8 +85,8 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "
 
-7:57 AM - janitor Stanley Stone reported that the Phoenix Sapphire was missing from its display case. 
-8:32 AM - inspection by security guard James Bunsby found no other exhibits to be missing from the premises. 
+7:57 AM - janitor Stanley Stone reported that the Phoenix Sapphire was missing from its display case and pressure plate alarm was not going off.
+8:32 AM - inspection by first-shift security guard James Bunsby found no other exhibits to be missing from the premises. 
 No damaged property noted in any other rooms. 
 No damage or signs of entry noted on any of the entrances."
 visible_characters = -1
@@ -89,14 +95,23 @@ meta_underlined = true
 tab_size = 4
 text = "
 
-7:57 AM - janitor Stanley Stone reported that the Phoenix Sapphire was missing from its display case. 
-8:32 AM - inspection by security guard James Bunsby found no other exhibits to be missing from the premises. 
+7:57 AM - janitor Stanley Stone reported that the Phoenix Sapphire was missing from its display case and pressure plate alarm was not going off.
+8:32 AM - inspection by first-shift security guard James Bunsby found no other exhibits to be missing from the premises. 
 No damaged property noted in any other rooms. 
 No damage or signs of entry noted on any of the entrances."
 scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "BBCode", "custom_fonts" ]
+_sections_unfolded = [ "BBCode", "Rect", "custom_fonts" ]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="pin" parent="." index="4"]
+
+position = Vector2( -217.261, -230 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 

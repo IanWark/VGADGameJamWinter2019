@@ -4,6 +4,6 @@ func _ready():
 	._ready()
 	scene = "res://scenes/events/event_2_unknown.tscn"
 	correct_event = "event_2_a"
-	banned_strings = ["crowbar", "panel"]
+	banned_strings = ["crowbar", "wirecutters"]
 	required_strings = ["clock"]
 	set_locked()
