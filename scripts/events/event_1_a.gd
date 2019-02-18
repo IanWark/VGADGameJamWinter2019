@@ -1,6 +1,6 @@
 extends "res://scripts/event.gd"
 
-const NORMAL = "He went in through the roof. But how?"
+const NORMAL = "He broke in through the roof. But how?"
 const CROWBAR = "He smashed the glass with a crowbar."
 const KEY = "He unlocked the skylight with a stolen key."
 
