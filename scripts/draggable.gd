@@ -17,7 +17,7 @@ var mouse_pos
 # Must be set to match for each inherited object
 var scene = null
 
-onready var pin = $Pin
+onready var pin = $pin
 onready var area = $Area2D
 onready var main = get_tree().get_root().get_node("Main")
 
