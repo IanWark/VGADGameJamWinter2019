@@ -109,11 +109,11 @@ func move_event_to_locked(event):
 		# Create the new possible events
 		var event_a = load(a_scene).instance()
 		add_child(event_a)
-		event_a.global_position = new_event_pos_1.global_position 
+		event_a.global_position = new_event_pos_2.global_position 
 		
 		var event_b = load(b_scene).instance()
 		add_child(event_b)
-		event_b.global_position = new_event_pos_2.global_position 
+		event_b.global_position = new_event_pos_1.global_position 
 		
 		# Set which answer is wrong so we can delete it later
 		wrong_answer = event_b
