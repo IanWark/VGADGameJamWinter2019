@@ -62,7 +62,7 @@ func delete_connected_strings(item):
 	for string in strings:
 		data = string.get_data()
 		if (data[2] == item || data[3] == item):
-			string.event.clue_detached(string.clue)
+			string._event.clue_detached(string._clue)
 			strings.erase(string)
 
 func string_exists(string1, string2):
