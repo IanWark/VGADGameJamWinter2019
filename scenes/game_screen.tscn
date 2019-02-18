@@ -60,7 +60,7 @@ tracks/1/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
@@ -326,27 +326,27 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="crowbar" parent="." index="8" instance=ExtResource( 8 )]
 
-position = Vector2( 336.41, 493.799 )
+position = Vector2( 880.41, 288.799 )
 
 [node name="key" parent="." index="9" instance=ExtResource( 9 )]
 
-position = Vector2( 627.469, 500.335 )
+position = Vector2( 898.469, 478.335 )
 
 [node name="panel" parent="." index="10" instance=ExtResource( 10 )]
 
-position = Vector2( 768.891, 345.73 )
+position = Vector2( 740.891, 442.73 )
 
 [node name="clock" parent="." index="11" instance=ExtResource( 11 )]
 
-position = Vector2( 127, 371 )
+position = Vector2( 95, 331 )
 
 [node name="damage" parent="." index="12" instance=ExtResource( 12 )]
 
-position = Vector2( 916.137, 310.177 )
+position = Vector2( 235.137, 380.177 )
 
 [node name="wirecutters" parent="." index="13" instance=ExtResource( 13 )]
 
-position = Vector2( 890.643, 497.045 )
+position = Vector2( 187.643, 507.045 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="14"]
 
