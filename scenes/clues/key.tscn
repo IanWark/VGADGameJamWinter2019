@@ -13,6 +13,7 @@ font_data = ExtResource( 2 )
 [node name="clue" index="0" instance=ExtResource( 1 )]
 
 texture = null
+_sections_unfolded = [ "Region", "Transform" ]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." index="0"]
 

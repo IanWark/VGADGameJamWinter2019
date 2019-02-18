@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://art/board_texture.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/events/event_1_b.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/strings.gd" type="Script" id=7]
 [ext_resource path="res://scenes/clues/crowbar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/clues/key.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Gradient" id=1]
 
@@ -279,5 +280,9 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 [node name="crowbar" parent="." index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 837.32, 395.333 )
+
+[node name="clue" parent="." index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 693, 501 )
 
 
