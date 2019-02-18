@@ -29,11 +29,9 @@ func check_for_submission():
 	for area in overlapping:
 		var area_parent = area.get_parent()
 		if area_parent.get_class() == EVENT && area_parent.get_event_type() == EVENT_UNKNOWN:
-			print(area_parent.submit(self))
 			if area_parent.submit(self):
 				# Success
 				if !finished_event:    # We only want to call this once
-					print("success")
 					# Move event to submitted area
 					position = area_parent.global_position
 					anim_player.play("fade_in")
