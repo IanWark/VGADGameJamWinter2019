@@ -17,4 +17,4 @@ func _ready():
 func _input(event):
    # Change scene to game screen
    if event is InputEventMouseButton:
-       get_tree().change_scene("res://scenes/GameScreen.tscn")
+       get_tree().change_scene("res://scenes/game_screen.tscn")
