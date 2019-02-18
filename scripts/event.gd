@@ -1,5 +1,6 @@
 extends "res://scripts/draggable.gd"
 
+const EVENT = "event"
 const EVENT_UNKNOWN = "event_unknown"
 
 var locked_event = false
@@ -9,10 +10,10 @@ onready var anim_player = $AnimationPlayer
 
 # This is so we can check if an object is a clue
 func get_class():
-	return "event"
+	return EVENT
 
 func get_event_type():
-	return "event"
+	return EVENT
 
 func _process(delta):
 	view_item_check()
@@ -27,7 +28,7 @@ func check_for_submission():
 	var overlapping = area.get_overlapping_areas()
 	for area in overlapping:
 		var area_parent = area.get_parent()
-		if area_parent.get_event_type() == EVENT_UNKNOWN:
+		if area_parent.get_class() == EVENT && area_parent.get_event_type() == EVENT_UNKNOWN:
 			print(area_parent.submit(self))
 			if area_parent.submit(self):
 				# Success
