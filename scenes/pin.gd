@@ -14,7 +14,7 @@ func _process(delta):
 		print("clicked me! My parent is ", get_parent())
 
 func _on_Area2D_mouse_entered():
-	main.highlight(self)
+	self.highlighted = true
 
 func _on_Area2D_mouse_exited():
-	main.unhighlight(self)
+	self.highlighted = false
