@@ -7,6 +7,11 @@ var creating_string = false
 var current_pin_pos = Vector2(0,0)
 
 var strings = []
+var data = []
+var parent1 = null
+var parent2 = null
+var pin_pos_1
+var pin_pos_2
 
 class RedString:
 	var _pin_pos1
@@ -33,8 +38,8 @@ func _process(delta):
 
 func _draw():
 	if creating_string:
-		draw_line(current_pin_pos, get_global_mouse_position(), COLOR, THICKNESS)
+		draw_line(pin_pos_1, get_global_mouse_position(), COLOR, THICKNESS)
 	for string in strings:
-		var data = string.get_data()
+		data = string.get_data()
 		draw_line(data[0], data[1], COLOR, THICKNESS)
 	#draw_line(Vector2(0,0), get_global_mouse_position(), COLOR, THICKNESS)
