@@ -7,11 +7,6 @@
 [ext_resource path="res://fonts/danielbk.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://art/pin.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 260, 340 )
-
 [sub_resource type="DynamicFont" id=2]
 
 size = 36
@@ -20,6 +15,11 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 260, 340 )
+
 [sub_resource type="Animation" id=3]
 
 resource_name = "create"
@@ -27,7 +27,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("background:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -36,7 +36,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( 0, 700 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -45,7 +45,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("background:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 2000, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -75,7 +75,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="event" type="Sprite" index="0"]
+[node name="event" type="Sprite"]
 
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
@@ -85,28 +85,15 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="background" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="." index="1"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-
-shape = SubResource( 1 )
-
-[node name="Image" type="Sprite" parent="." index="2"]
+[node name="Image" type="Sprite" parent="background" index="0"]
 
 position = Vector2( 0, -70 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Label" type="RichTextLabel" parent="." index="3"]
+[node name="Label" type="RichTextLabel" parent="background" index="1"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -137,13 +124,27 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Pin" type="Sprite" parent="." index="4"]
+[node name="Pin" type="Sprite" parent="background" index="2"]
 
 position = Vector2( -223.804, -293.952 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 
 root_node = NodePath("..")
 autoplay = ""

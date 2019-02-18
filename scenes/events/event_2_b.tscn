@@ -8,12 +8,12 @@
 
 script = ExtResource( 2 )
 
-[node name="Image" parent="." index="2"]
+[node name="Image" parent="background" index="0"]
 
 texture = ExtResource( 3 )
 
-[node name="Label" parent="." index="3"]
+[node name="Label" parent="background" index="1"]
 
-text = "He knocked out the guard"
+text = ""
 
 

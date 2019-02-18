@@ -31,34 +31,26 @@ script = ExtResource( 2 )
 [node name="background" parent="." index="0"]
 
 modulate = Color( 1, 1, 1, 0.501961 )
-_sections_unfolded = [ "Material", "Visibility" ]
-
-[node name="Image" parent="." index="2"]
-
-modulate = Color( 1, 1, 1, 0.501961 )
-texture = ExtResource( 3 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="Label" parent="." index="3"]
+[node name="Image" parent="background" index="0"]
 
-visible = false
-_sections_unfolded = [ "Visibility", "custom_colors" ]
+texture = ExtResource( 3 )
 
-[node name="Pin" parent="." index="4"]
+[node name="Label" parent="background" index="1"]
 
-visible = false
-_sections_unfolded = [ "Transform", "Visibility" ]
+text = ""
 
-[node name="halo" type="Sprite" parent="." index="5"]
+[node name="AnimationPlayer" parent="." index="2"]
+
+anims/halo = SubResource( 1 )
+
+[node name="halo" type="Sprite" parent="." index="3"]
 
 modulate = Color( 0.957031, 0.845463, 0.242996, 0.495776 )
 scale = Vector2( 1.1, 1.1 )
 z_index = -1
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="AnimationPlayer" parent="." index="6"]
-
-anims/halo = SubResource( 1 )
 
 
