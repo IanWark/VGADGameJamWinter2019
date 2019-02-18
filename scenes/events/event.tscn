@@ -18,7 +18,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 260, 340 )
+extents = Vector2( 260, 350 )
 
 [sub_resource type="Animation" id=3]
 
@@ -75,7 +75,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="event" type="Sprite" index="0"]
+[node name="event" type="Sprite"]
 
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
@@ -89,20 +89,20 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Image" type="Sprite" parent="background" index="0"]
 
-position = Vector2( 0, -70 )
+position = Vector2( 0, -90 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Label" type="RichTextLabel" parent="background" index="1"]
 
 anchor_left = 0.0
-anchor_top = 1.0
+anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -238.0
-margin_top = -471.0
-margin_right = -290.0
-margin_bottom = -334.0
+margin_left = -235.0
+margin_top = 180.0
+margin_right = -280.0
+margin_bottom = -360.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -117,16 +117,16 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "How did he break into the museum??"
+text = "How did he break into the museum?"
 scroll_active = false
 scroll_following = true
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_fonts" ]
 
 [node name="pin" parent="background" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -223, -293 )
+position = Vector2( -223, -310 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="." index="1"]

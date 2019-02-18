@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/events/event_unknown.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/events/event_3_unknown.gd" type="Script" id=2]
+
+[node name="event_3_unknown" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="background" parent="." index="0"]
+
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="Label" parent="background" index="1"]
+
+text = "How did he steal it without triggering the alarm?"
+
+
