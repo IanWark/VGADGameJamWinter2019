@@ -1,10 +1,9 @@
 extends "res://scripts/event.gd"
 
 var correct_event # must be overwritten with what event is the solution
-var banned_strings
+var banned_strings = []
 
 onready var halo = $halo
-onready var strings = get_tree().get_root().get_node("Main/strings")
 
 func get_event_type():
 	return "event_unknown"
