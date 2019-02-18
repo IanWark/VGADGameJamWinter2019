@@ -2,6 +2,7 @@ extends "res://scripts/event.gd"
 
 var correct_event # must be overwritten with what event is the solution
 var banned_strings = []
+var required_strings = []
 
 onready var halo = $halo
 
@@ -21,11 +22,17 @@ func submit(event):
 	
 	if event.get_name() == correct_event:
 		for banned_string_name in banned_strings:
-			print("Main/" + banned_string_name)
 			var correct_item = get_tree().get_root().get_node("Main/" + correct_event)
 			var banned_item = get_tree().get_root().get_node("Main/" + banned_string_name)
 			
 			if strings.string_exists(correct_item, banned_item):
+				return false
+		
+		for required_string_name in required_strings:
+			var correct_item = get_tree().get_root().get_node("Main/" + correct_event)
+			var required_item = get_tree().get_root().get_node("Main/" + required_string_name)
+			
+			if !strings.string_exists(correct_item, required_item):
 				return false
 		
 		return true
