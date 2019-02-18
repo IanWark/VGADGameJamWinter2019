@@ -39,7 +39,6 @@ func check_for_submission():
 		var area_parent = area.get_parent()
 		if area_parent.get_class() == EVENT && area_parent.get_event_type() == EVENT_UNKNOWN && !area_parent.anim_player.is_playing():
 			if area_parent.submit(self):
-				print("success")
 				# Success
 				if !finished_event:    # We only want to call this once
 					# Move event to submitted area
@@ -50,7 +49,6 @@ func check_for_submission():
 					
 				finished_event = true
 			else:
-				print("failure")
 				# Failure
 				# Move event down and place it a bit randomly to avoid overlap
 				position = area_parent.global_position + Vector2(randi()%41-21, 200 + randi()%41-21)
@@ -81,7 +79,6 @@ func clue_attached(clue):
 
 func clue_detached(clue):
 	clues.remove(clues.find(clue.get_name()))
-	print(clues)
 	set_text()
 
 func set_text():

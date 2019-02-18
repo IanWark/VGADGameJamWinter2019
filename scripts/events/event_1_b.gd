@@ -12,9 +12,6 @@ func set_text():
 	var has_crowbar = clues.has("crowbar")
 	var has_key = clues.has("key")
 	
-	print(has_crowbar)
-	print(has_key)
-	
 	if has_crowbar && has_key:
 		label.text = NORMAL
 	elif has_crowbar:
