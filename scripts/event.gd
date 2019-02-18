@@ -52,10 +52,6 @@ func check_for_submission():
 				# Move event down and place it a bit randomly to avoid overlap
 				position = area_parent.global_position + Vector2(randi()%41-21, 200 + randi()%41-21)
 
-func remove_event():
-	set_locked()
-	anim_player.play("destroy")
-
 func mouse_dragging(delta):
 	var event_unknown = main.event_unknown
 	if event_unknown != null:
@@ -67,7 +63,11 @@ func mouse_released():
 	check_for_submission()
 	.mouse_released()
 
+func remove_event():
+	set_locked()
+	strings.delete_connected_strings(self)
+	anim_player.play("destroy")
+
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "destroy":
 		queue_free()
-
