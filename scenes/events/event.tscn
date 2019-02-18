@@ -99,9 +99,9 @@ anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -238.0
+margin_left = -235.0
 margin_top = -471.0
-margin_right = -290.0
+margin_right = -270.0
 margin_bottom = -334.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -122,7 +122,7 @@ scroll_active = false
 scroll_following = true
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Margin", "custom_colors", "custom_fonts" ]
 
 [node name="pin" parent="background" index="2" instance=ExtResource( 6 )]
 
