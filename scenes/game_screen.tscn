@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://art/board_texture.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes/clues/key.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/clues/panel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/clues/clock.tscn" type="PackedScene" id=11]
+[ext_resource path="res://music/Dances and Dames.ogg" type="AudioStream" id=12]
 
 [sub_resource type="Gradient" id=1]
 
@@ -329,12 +330,23 @@ position = Vector2( 627.469, 500.335 )
 
 [node name="panel" parent="." index="10" instance=ExtResource( 10 )]
 
-position = Vector2( 875, 309 )
+position = Vector2( 768.891, 345.73 )
 
 [node name="clock" parent="." index="11" instance=ExtResource( 11 )]
 
 position = Vector2( 127, 371 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="12"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
 [connection signal="animation_finished" from="ItemViewLayer/ItemViewBG/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 
 

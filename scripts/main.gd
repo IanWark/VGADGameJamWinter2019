@@ -20,6 +20,10 @@ var current_event = 1
 
 var event_unknown
 
+const songs = ["res://music/Dances and Dames.ogg"]
+var current_song = 0
+onready var music_player = $AudioStreamPlayer
+
 onready var event_pos_template = $"Locked Events/event_sequence/event_pos_0"
 onready var event_sequence = $"Locked Events/event_sequence"
 
@@ -151,3 +155,10 @@ func _top_draggable(): #Get the top draggable
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	get_tree().change_scene("res://scenes/ending.tscn")
+
+func _on_AudioStreamPlayer_finished():
+	current_song += 1
+	if current_song > songs.size()-1:
+		current_song = 0
+	
+	music_player.play(songs[current_song])
