@@ -3,6 +3,10 @@
 
 extends Node
 
+const EVENT_2_UNKNOWN = "res://scenes/events/event_2_unknown.tscn"
+const EVENT_2_A = "res://scenes/events/event_2_a.tscn"
+const EVENT_2_B = "res://scenes/events/event_2_b.tscn"
+
 var draggables = []
 var top_draggable = null
 var dragging = false
@@ -11,6 +15,13 @@ var viewed_item = null
 
 var event_unknown
 
+onready var event_pos_template = $"Locked Events/event_sequence/event_pos_0"
+onready var event_sequence = $"Locked Events/event_sequence"
+
+onready var new_event_pos_1 = $"new_event_pos_1"
+onready var new_event_pos_2 = $"new_event_pos_2"
+
+onready var wrong_answer = $event_1_b
 onready var item_view_bg = $ItemViewLayer/ItemViewBG
 onready var center_container = $ItemViewLayer/ItemViewBG/CenterContainer
 
@@ -53,6 +64,42 @@ func view_item(scene):
 		center_container.add_child(viewed_item)
 		# darken screen and show object
 		item_view_bg.visible = true
+
+func move_event_to_locked(event):
+	if event_unknown != null:
+		var event_position = event_unknown.get_parent()
+		event_position = add_child(event)
+		
+		event_unknown.queue_free()
+		event_unknown = null
+		
+		wrong_answer.queue_free()
+		
+		# Get new container for a locked event
+		var new_locked_container = event_pos_template.duplicate()
+		new_locked_container.get_node("Control/event_0_JAM").queue_free()
+		
+		# Create new unknown event and add it to container
+		event_unknown = load(EVENT_2_UNKNOWN).instance()
+		new_locked_container.get_node("Control").add_child(event_unknown)
+		
+		# Add container to locked event sequence
+		event_sequence.add_child(new_locked_container)
+		
+		# Create the new possible events
+		var event_2_a = load(EVENT_2_A).instance()
+		add_child(event_2_a)
+		event_2_a.global_position = new_event_pos_1.global_position 
+		
+		var event_2_b = load(EVENT_2_B).instance()
+		add_child(event_2_b)
+		event_2_b.global_position = new_event_pos_2.global_position 
+		
+		
+		# Set which answer is wrong so we can delete it later
+		wrong_answer = event_2_b
+		
+		
 
 class DraggablesSorter: #Custom sorter
 	static func z_index(a, b): #Sort by z_index

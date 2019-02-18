@@ -75,6 +75,7 @@ _sections_unfolded = [ "Mouse" ]
 
 [node name="Locked Events" type="Container" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -214,19 +215,31 @@ texture_mode = 16
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="event_1_a" parent="." index="2" instance=ExtResource( 4 )]
+[node name="new_event_pos_1" type="Node2D" parent="." index="2"]
 
-position = Vector2( 217.887, 318.663 )
+position = Vector2( 380, 320 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="event_1_b" parent="." index="3" instance=ExtResource( 5 )]
+[node name="new_event_pos_2" type="Node2D" parent="." index="3"]
 
-position = Vector2( 448.124, 322.895 )
+position = Vector2( 585, 320 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" parent="." index="4" instance=ExtResource( 6 )]
+[node name="event_1_a" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 680.169, 322.896 )
+position = Vector2( 380, 320 )
 
-[node name="ItemViewLayer" type="CanvasLayer" parent="." index="5"]
+[node name="event_1_b" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 585, 320 )
+
+[node name="Sprite" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 868.013, 481.275 )
+
+[node name="ItemViewLayer" type="CanvasLayer" parent="." index="7"]
 
 editor/display_folded = true
 layer = 1

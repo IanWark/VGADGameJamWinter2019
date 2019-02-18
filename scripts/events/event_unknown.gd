@@ -4,10 +4,15 @@ var correct_event # must be overwritten with what event is the solution
 
 onready var halo = $halo
 
+func get_event_type():
+	return "event_unknown"
+
 func _ready():
 	._ready()
 	scene = "res://scenes/events/event_unknown.tscn"
 	set_locked()
+	stop_halo()
+	anim_player.play("fade_in")
 
 # Event submits itself
 func submit(event):
