@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://art/board_texture.png" type="Texture" id=2]
@@ -12,9 +12,10 @@
 [ext_resource path="res://scenes/clues/panel.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/clues/clock.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/clues/damage.tscn" type="PackedScene" id=12]
-[ext_resource path="res://music/Dances and Dames.ogg" type="AudioStream" id=13]
-[ext_resource path="res://sound/tap.wav" type="AudioStream" id=14]
-[ext_resource path="res://sound/page.wav" type="AudioStream" id=15]
+[ext_resource path="res://scenes/clues/wirecutters.tscn" type="PackedScene" id=13]
+[ext_resource path="res://music/Dances and Dames.ogg" type="AudioStream" id=14]
+[ext_resource path="res://sound/tap.wav" type="AudioStream" id=15]
+[ext_resource path="res://sound/page.wav" type="AudioStream" id=16]
 
 [sub_resource type="Gradient" id=1]
 
@@ -59,7 +60,7 @@ tracks/1/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
@@ -343,27 +344,31 @@ position = Vector2( 127, 371 )
 
 position = Vector2( 916.137, 310.177 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="13"]
+[node name="wirecutters" parent="." index="13" instance=ExtResource( 13 )]
 
-stream = ExtResource( 13 )
+position = Vector2( 890.643, 497.045 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="14"]
+
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="tap" type="AudioStreamPlayer" parent="." index="14"]
+[node name="tap" type="AudioStreamPlayer" parent="." index="15"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 15 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="page" type="AudioStreamPlayer" parent="." index="15"]
+[node name="page" type="AudioStreamPlayer" parent="." index="16"]
 
-stream = ExtResource( 15 )
+stream = ExtResource( 16 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
