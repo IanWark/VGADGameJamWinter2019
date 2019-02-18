@@ -95,11 +95,9 @@ func move_event_to_locked(event):
 		add_child(event_2_b)
 		event_2_b.global_position = new_event_pos_2.global_position 
 		
-		
 		# Set which answer is wrong so we can delete it later
 		wrong_answer = event_2_b
-		
-		
+
 
 class DraggablesSorter: #Custom sorter
 	static func z_index(a, b): #Sort by z_index

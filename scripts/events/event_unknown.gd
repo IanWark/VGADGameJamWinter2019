@@ -1,8 +1,10 @@
 extends "res://scripts/event.gd"
 
 var correct_event # must be overwritten with what event is the solution
+var banned_strings
 
 onready var halo = $halo
+onready var strings = get_tree().get_root().get_node("Main/strings")
 
 func get_event_type():
 	return "event_unknown"
@@ -16,7 +18,20 @@ func _ready():
 
 # Event submits itself
 func submit(event):
-	return event.get_name() == correct_event
+	anim_player.play("fade_in")
+	
+	if event.get_name() == correct_event:
+		for banned_string_name in banned_strings:
+			print("Main/" + banned_string_name)
+			var correct_item = get_tree().get_root().get_node("Main/" + correct_event)
+			var banned_item = get_tree().get_root().get_node("Main/" + banned_string_name)
+			
+			if strings.string_exists(correct_item, banned_item):
+				return false
+		
+		return true
+	
+	return false
 
 func start_halo():
 	if not anim_player.is_playing():

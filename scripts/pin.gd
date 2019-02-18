@@ -22,18 +22,15 @@ func _process(delta):
 				s.parent2 = get_event_or_clue_parent()
 				s.creating_string = false
 				
-				print(s.parent1.get_class())
-				print(s.parent2.get_class())
-				
 				if(s.parent1.get_class() == "event" && !s.parent1.locked_event):
 					if(s.parent2.get_class() == "clue"):
 						# One is an event, the other a clue, can make the tie or remove if it exists
-						if(!s.string_exists(s.parent1, s.parent2)):
+						if(!s.delete_string(s.parent1, s.parent2)):
 							s.strings.append(s.RedString.new(s.pin1, s.pin2, s.parent1, s.parent2))
 				elif(s.parent1.get_class() == "clue"):
 					if(s.parent2.get_class() == "event" && !s.parent2.locked_event):
 						# Other way around, still valid, make the tie or remove if it exists
-						if(!s.string_exists(s.parent1, s.parent2)):
+						if(!s.delete_string(s.parent1, s.parent2)):
 							s.strings.append(s.RedString.new(s.pin2, s.pin1, s.parent2, s.parent1))
 				# Clean up regardless of if tie was made
 				s.parent1 = null

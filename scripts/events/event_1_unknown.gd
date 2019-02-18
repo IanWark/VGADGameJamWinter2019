@@ -4,4 +4,5 @@ func _ready():
 	._ready()
 	scene = "res://scenes/events/event_1_unknown.tscn"
 	correct_event = "event_1_a"
+	banned_strings = ["crowbar"]
 	set_locked()
