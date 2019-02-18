@@ -54,11 +54,11 @@ func _process(delta):
 			event_unknown.stop_halo()
 
 # Called when an item is right clicked and wants to be viewed
-func view_item(scene):
+func view_item(item):
 	if viewed_item == null:
 		# view item under cursor
 		# first create a larger version of the object 
-		viewed_item = load(scene).instance()
+		viewed_item = item.duplicate()
 		viewed_item.set_to_being_viewed()
 		# place object in center
 		center_container.add_child(viewed_item)

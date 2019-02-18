@@ -42,6 +42,7 @@ func _ready():
 func set_to_being_viewed():
 	being_viewed = true
 	scale = Vector2(0.75, 0.75)
+	position = Vector2(0, 0)
 	# Any onready vars need to be changed in ready
 
 func _process(delta):
@@ -51,7 +52,7 @@ func _process(delta):
 func view_item_check():
 	if mouse_in && Input.is_action_just_pressed("right_click"):
 		if scene != null:
-			main.view_item(scene)
+			main.view_item(self)
 
 func dragging_checks(delta):
 	if (dragging && Input.is_action_pressed("left_click")): #While dragging
