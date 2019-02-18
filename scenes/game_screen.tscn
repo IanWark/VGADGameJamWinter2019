@@ -279,10 +279,10 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="crowbar" parent="." index="8" instance=ExtResource( 8 )]
 
-position = Vector2( 837.32, 395.333 )
+position = Vector2( 917.291, 501.961 )
 
-[node name="clue" parent="." index="9" instance=ExtResource( 9 )]
+[node name="key" parent="." index="9" instance=ExtResource( 9 )]
 
-position = Vector2( 693, 501 )
+position = Vector2( 627.469, 500.335 )
 
 
