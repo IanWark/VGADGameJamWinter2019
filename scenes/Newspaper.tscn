@@ -12,7 +12,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="HBoxContainer" type="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -222,26 +222,22 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = false
-bbcode_text = ""
+bbcode_enabled = true
+bbcode_text = "Jewelry and Art Museum
+
+For the second time since it first arrived at the museum, the prestigious Phoenix Sapphire has been swiped from under the noses of security! The priceless jewel was the pride of the museum and J.A.M.'s curator, along with the local police department, have reportedly enlisted the help of famed Private Investigator, Marty O'Hallahan, in determining how such a dastardly crime "
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sapien lorem, suscipit facilisis magna in, aliquam scelerisque massa. Donec luctus est dolor, et dignissim tellus gravida sed. Maecenas rhoncus porttitor tortor sed ornare. Sed a libero tincidunt, rutrum augue quis, dignissim massa. Proin condimentum vestibulum metus, non lobortis enim aliquam vel. Sed mollis malesuada ipsum nec commodo. Quisque et purus et arcu luctus faucibus. Donec quis ligula at augue tempus rutrum eu vitae orci. Aliquam eleifend libero rutrum fermentum dapibus. Maecenas malesuada ex ut turpis tristique, sed semper enim posuere.
+text = "Jewelry and Art Museum
 
-Quisque commodo quam ut sagittis consequat. Vivamus tempor sollicitudin mi, luctus tempor elit consequat sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam molestie non quam id venenatis. Morbi vitae laoreet orci. Phasellus faucibus enim eu pellentesque lacinia. Donec mattis quis sapien vitae consectetur. Cras non nisl enim. Proin pellentesque mauris purus, nec vulputate dui suscipit id. Nunc libero lacus, porttitor non molestie ut, pharetra id felis. Mauris egestas sit amet quam ac dapibus.
-
-Vestibulum accumsan id mi et volutpat. Integer aliquet vulputate lacus, eu egestas libero. Mauris aliquet suscipit gravida. Phasellus diam urna, scelerisque ultrices quam vitae, viverra tempus odio. Nam nec nulla eget dui sagittis porta sit amet ut magna. Morbi eget eros magna. Etiam vitae nibh risus.
-
-Praesent vel pretium turpis, non interdum libero. Quisque sed dolor posuere, placerat augue sit amet, dignissim nulla. In massa erat, tincidunt non purus nec, vehicula condimentum sem. Integer massa eros, tristique in fermentum id, pharetra in tellus. Vivamus finibus ligula facilisis fringilla iaculis. Mauris auctor et justo eget euismod. Etiam at commodo tortor, nec commodo neque. Pellentesque vestibulum lobortis molestie. Aliquam varius eros id libero iaculis, vitae aliquam dolor faucibus. Proin tempus neque purus, tempus lobortis eros dapibus ut. Maecenas id justo ut tortor suscipit dictum. Nam in tincidunt enim. Aenean metus eros, lacinia a posuere ut, maximus sit amet odio. Proin vehicula ultrices euismod. Quisque convallis orci lacus, ut mattis arcu pellentesque at.
-
-Suspendisse et imperdiet neque. Donec feugiat aliquet elementum. Sed pretium, mauris in congue aliquet, urna leo porta risus, et maximus nibh nunc vel neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas a pulvinar sem. Suspendisse urna urna, egestas in fermentum vel, porttitor quis velit. Duis vel felis rutrum, tincidunt nisl iaculis, sodales ex. Nullam ac dui efficitur, iaculis sem aliquet, pellentesque justo. Nulla ut accumsan risus. Etiam cursus nisi vestibulum massa hendrerit pretium. Sed dapibus, lectus vel luctus aliquet, urna felis tristique magna, in consequat magna nisl tincidunt metus. Mauris luctus ornare consectetur. Cras tellus enim, tristique aliquet vulputate"
+For the second time since it first arrived at the museum, the prestigious Phoenix Sapphire has been swiped from under the noses of security! The priceless jewel was the pride of the museum and J.A.M.'s curator, along with the local police department, have reportedly enlisted the help of famed Private Investigator, Marty O'Hallahan, in determining how such a dastardly crime "
 scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "Size Flags", "custom_colors" ]
+_sections_unfolded = [ "BBCode", "Size Flags", "custom_colors" ]
 
 [node name="Text2" type="RichTextLabel" parent="Newspaper/MarginContainer/VBoxContainer/Columns" index="1"]
 
@@ -259,26 +255,30 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = false
-bbcode_text = ""
+bbcode_enabled = true
+bbcode_text = "was committed. A police representative reportedly stated that the department hopes this investigation will lead to the recovery of the sapphire and the capture of the crook who took it.
+
+NIBLACK STRIKES THE REICH
+
+The U.S. destroyer ‘Niblack‘ dropped depth charges on a German U-Boat yesterday while picking up survivors from a sunken Dutch freighter. This was the first \"shot in anger\" fired by America against Germany. A nervous public is left wondering whether it is only a matter of time until America is drawn fully into the war in Europe.
+
+In a statement to reporters early this morning, President Roosevelt stated that his administration (cont. page 4)"
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sapien lorem, suscipit facilisis magna in, aliquam scelerisque massa. Donec luctus est dolor, et dignissim tellus gravida sed. Maecenas rhoncus porttitor tortor sed ornare. Sed a libero tincidunt, rutrum augue quis, dignissim massa. Proin condimentum vestibulum metus, non lobortis enim aliquam vel. Sed mollis malesuada ipsum nec commodo. Quisque et purus et arcu luctus faucibus. Donec quis ligula at augue tempus rutrum eu vitae orci. Aliquam eleifend libero rutrum fermentum dapibus. Maecenas malesuada ex ut turpis tristique, sed semper enim posuere.
+text = "was committed. A police representative reportedly stated that the department hopes this investigation will lead to the recovery of the sapphire and the capture of the crook who took it.
 
-Quisque commodo quam ut sagittis consequat. Vivamus tempor sollicitudin mi, luctus tempor elit consequat sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam molestie non quam id venenatis. Morbi vitae laoreet orci. Phasellus faucibus enim eu pellentesque lacinia. Donec mattis quis sapien vitae consectetur. Cras non nisl enim. Proin pellentesque mauris purus, nec vulputate dui suscipit id. Nunc libero lacus, porttitor non molestie ut, pharetra id felis. Mauris egestas sit amet quam ac dapibus.
+NIBLACK STRIKES THE REICH
 
-Vestibulum accumsan id mi et volutpat. Integer aliquet vulputate lacus, eu egestas libero. Mauris aliquet suscipit gravida. Phasellus diam urna, scelerisque ultrices quam vitae, viverra tempus odio. Nam nec nulla eget dui sagittis porta sit amet ut magna. Morbi eget eros magna. Etiam vitae nibh risus.
+The U.S. destroyer ‘Niblack‘ dropped depth charges on a German U-Boat yesterday while picking up survivors from a sunken Dutch freighter. This was the first \"shot in anger\" fired by America against Germany. A nervous public is left wondering whether it is only a matter of time until America is drawn fully into the war in Europe.
 
-Praesent vel pretium turpis, non interdum libero. Quisque sed dolor posuere, placerat augue sit amet, dignissim nulla. In massa erat, tincidunt non purus nec, vehicula condimentum sem. Integer massa eros, tristique in fermentum id, pharetra in tellus. Vivamus finibus ligula facilisis fringilla iaculis. Mauris auctor et justo eget euismod. Etiam at commodo tortor, nec commodo neque. Pellentesque vestibulum lobortis molestie. Aliquam varius eros id libero iaculis, vitae aliquam dolor faucibus. Proin tempus neque purus, tempus lobortis eros dapibus ut. Maecenas id justo ut tortor suscipit dictum. Nam in tincidunt enim. Aenean metus eros, lacinia a posuere ut, maximus sit amet odio. Proin vehicula ultrices euismod. Quisque convallis orci lacus, ut mattis arcu pellentesque at.
-
-Suspendisse et imperdiet neque. Donec feugiat aliquet elementum. Sed pretium, mauris in congue aliquet, urna leo porta risus, et maximus nibh nunc vel neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas a pulvinar sem. Suspendisse urna urna, egestas in fermentum vel, porttitor quis velit. Duis vel felis rutrum, tincidunt nisl iaculis, sodales ex. Nullam ac dui efficitur, iaculis sem aliquet, pellentesque justo. Nulla ut accumsan risus. Etiam cursus nisi vestibulum massa hendrerit pretium. Sed dapibus, lectus vel luctus aliquet, urna felis tristique magna, in consequat magna nisl tincidunt metus. Mauris luctus ornare consectetur. Cras tellus enim, tristique aliquet vulputate"
+In a statement to reporters early this morning, President Roosevelt stated that his administration (cont. page 4)"
 scroll_active = false
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "Size Flags", "custom_colors" ]
+_sections_unfolded = [ "BBCode", "Size Flags", "custom_colors" ]
 
 [node name="BackgroundRight" type="ColorRect" parent="." index="2"]
 
