@@ -52,3 +52,11 @@ License: CC BY 3.0 https://creativecommons.org/licenses/by/3.0/
 
 The Fourth Colour by King Gizzard & The Lizard Wizard   
 https://kinggizzardandthelizardwizard.com/polygondwanaland/index.html    
+
+### Known Bugs
+
+-   If you click and drag on the zoomed in version of an event or clue you will move the zoomed out version
+
+-   Sometimes unlocked events and clues are not draggable. The first bug is a workaround for this one
+
+-   Events and clues can be purposefully moved out of the game view and lost forever
