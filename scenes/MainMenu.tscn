@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://art/menu_bg.png" type="Texture" id=2]
 [ext_resource path="res://fonts/tox-typewriter/Tox Typewriter.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://music/Noire #1.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -20,7 +21,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="MarginContainer" type="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -164,6 +165,15 @@ text = "PLAY"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="button_up" from="CanvasLayer/VBoxContainer/CenterContainer/Button" to="." method="_on_Button_button_up"]
 
