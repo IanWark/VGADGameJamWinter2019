@@ -1,0 +1,98 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/clues/clue.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/panel.png" type="Texture" id=2]
+[ext_resource path="res://fonts/Tox Typewriter.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 32
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="clue" index="0" instance=ExtResource( 1 )]
+
+texture = null
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -250.0
+margin_top = -248.0
+margin_right = 250.0
+margin_bottom = 393.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 0.94902, 1 )
+
+[node name="Picture" type="TextureRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -149.0
+margin_top = -243.0
+margin_right = 351.0
+margin_bottom = 257.0
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -239.0
+margin_top = 62.0
+margin_right = 251.0
+margin_bottom = 382.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "The security guard stationed last night, pictured here, discusses the heist.
+
+\"What's really got me baffled is how he managed the grab itself. We're state of the art here. What could he have done to trick the alarms?\""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "The security guard stationed last night, pictured here, discusses the heist.
+
+\"What's really got me baffled is how he managed the grab itself. We're state of the art here. What could he have done to trick the alarms?\""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_colors", "custom_fonts" ]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 0, 71.7909 )
+scale = Vector2( 1, 1.28376 )
+
+

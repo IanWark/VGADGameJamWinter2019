@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://art/board_texture.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scripts/strings.gd" type="Script" id=7]
 [ext_resource path="res://scenes/clues/crowbar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/clues/key.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/clues/panel.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Gradient" id=1]
 
@@ -283,5 +284,9 @@ position = Vector2( 917.291, 501.961 )
 [node name="key" parent="." index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 627.469, 500.335 )
+
+[node name="clue" parent="." index="10" instance=ExtResource( 10 )]
+
+position = Vector2( 875, 309 )
 
 
