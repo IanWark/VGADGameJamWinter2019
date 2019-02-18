@@ -9,6 +9,6 @@ script = ExtResource( 2 )
 
 [node name="Label" parent="background" index="1"]
 
-text = "How did he break into the museum?"
+text = "How did he steal the Phoenix Sapphire?"
 
 
