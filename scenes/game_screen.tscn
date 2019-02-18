@@ -1,0 +1,382 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://art/board_texture.png" type="Texture" id=2]
+[ext_resource path="res://scenes/events/event_0_jam.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/events/event_1_unknown.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/events/event_1_a.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/events/event_1_b.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/strings.gd" type="Script" id=7]
+[ext_resource path="res://scenes/clues/crowbar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/clues/key.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/clues/panel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/clues/clock.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/clues/damage.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/clues/wirecutters.tscn" type="PackedScene" id=13]
+[ext_resource path="res://music/Dances and Dames.ogg" type="AudioStream" id=14]
+[ext_resource path="res://sound/tap.wav" type="AudioStream" id=15]
+[ext_resource path="res://sound/page.wav" type="AudioStream" id=16]
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.392157, 0.396078, 0.411765, 1 )
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="GradientTexture" id=2]
+
+flags = 4
+gradient = SubResource( 1 )
+width = 2048
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "fade_to_black"
+length = 6.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Main" type="Node" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Margin" ]
+
+[node name="RectBorder" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = SubResource( 2 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Mouse" ]
+
+[node name="RectBoardBG" type="TextureRect" parent="RectBorder" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Locked Events" type="Container" parent="." index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 210.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Mouse" ]
+
+[node name="ColorRect" type="ColorRect" parent="Locked Events" index="0"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_right = -20.0
+margin_bottom = 3.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.151566, 0.356856, 0.902344, 1 )
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="event_sequence" type="HBoxContainer" parent="Locked Events" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_right = -20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Mouse" ]
+
+[node name="event_pos_0" type="CenterContainer" parent="Locked Events/event_sequence" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 160.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 160, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Control" type="Control" parent="Locked Events/event_sequence/event_pos_0" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 95.0
+margin_right = 80.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Mouse" ]
+
+[node name="event_0_JAM" parent="Locked Events/event_sequence/event_pos_0/Control" index="0" instance=ExtResource( 3 )]
+
+[node name="event_pos_1" type="CenterContainer" parent="Locked Events/event_sequence" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 160, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Mouse", "Size Flags" ]
+
+[node name="Control" type="Control" parent="Locked Events/event_sequence/event_pos_1" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 95.0
+margin_right = 80.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Mouse" ]
+
+[node name="event_unknown" parent="Locked Events/event_sequence/event_pos_1/Control" index="0" instance=ExtResource( 4 )]
+
+[node name="Line2D" type="Line2D" parent="Locked Events" index="2"]
+
+position = Vector2( 495, 300.25 )
+scale = Vector2( 0.25, 5.125 )
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 10.0
+default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = 16
+sharp_limit = 2.0
+round_precision = 8
+
+[node name="new_event_pos_1" type="Node2D" parent="." index="2"]
+
+position = Vector2( 380, 320 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="new_event_pos_2" type="Node2D" parent="." index="3"]
+
+position = Vector2( 585, 320 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="event_1_a" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 380, 320 )
+
+[node name="event_1_b" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 585, 320 )
+
+[node name="ItemViewLayer" type="CanvasLayer" parent="." index="6"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="ItemViewBG" type="ColorRect" parent="ItemViewLayer" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.627451 )
+_sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Mouse", "Rect", "Size Flags", "Visibility" ]
+
+[node name="CenterContainer" type="CenterContainer" parent="ItemViewLayer/ItemViewBG" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -0.5
+margin_top = -0.5
+margin_right = 0.5
+margin_bottom = 0.5
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ItemViewLayer/ItemViewBG" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/fade_to_black = SubResource( 3 )
+blend_times = [  ]
+
+[node name="strings" type="Node2D" parent="." index="7"]
+
+z_index = 5
+script = ExtResource( 7 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
+[node name="crowbar" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 880.41, 288.799 )
+
+[node name="key" parent="." index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 898.469, 478.335 )
+
+[node name="panel" parent="." index="10" instance=ExtResource( 10 )]
+
+position = Vector2( 740.891, 442.73 )
+
+[node name="clock" parent="." index="11" instance=ExtResource( 11 )]
+
+position = Vector2( 95, 331 )
+
+[node name="damage" parent="." index="12" instance=ExtResource( 12 )]
+
+position = Vector2( 235.137, 380.177 )
+
+[node name="wirecutters" parent="." index="13" instance=ExtResource( 13 )]
+
+position = Vector2( 187.643, 507.045 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="14"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="tap" type="AudioStreamPlayer" parent="." index="15"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="page" type="AudioStreamPlayer" parent="." index="16"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="animation_finished" from="ItemViewLayer/ItemViewBG/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
+
+
