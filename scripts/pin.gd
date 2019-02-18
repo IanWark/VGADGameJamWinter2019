@@ -14,15 +14,16 @@ func _process(delta):
 	if (self.highlighted && Input.is_action_pressed("left_click")): #When clicking
 		if(!just_clicked):
 			just_clicked = true
-			print(just_clicked)
-			print("clicked me! My parent is ", get_parent(), "and I am at position ", self.global_position)
 			s.creating_string = true
 			
 			# If the first pin has been clicked, this is the second click. Finish adding the string
 			if (s.parent1 != null):
 				s.pin2 = self
-				s.parent2 = get_parent()
+				s.parent2 = get_event_or_clue_parent()
 				s.creating_string = false
+				
+				print(s.parent1.get_class())
+				print(s.parent2.get_class())
 				
 				if(s.parent1.get_class() == "event" && !s.parent1.locked_event):
 					if(s.parent2.get_class() == "clue"):
@@ -39,12 +40,21 @@ func _process(delta):
 				s.parent2 = null
 			else:
 				s.pin1 = self
-				s.parent1 = get_parent()
+				s.parent1 = get_event_or_clue_parent()
 					
 			#strings_node.strings.append(strings_node.RedString.new(Vector2(0,0), self.global_position, 0, 0))
 			
 	else:
 		just_clicked = false
+
+# Events have their parent 2 nodes up
+# Clues only have parents 1 node up
+func get_event_or_clue_parent():
+	var parent = get_parent()
+	if parent.get_class() != "clue" and parent.get_class() != "event":
+		parent = parent.get_parent()
+	
+	return parent
 
 func _on_Area2D_mouse_entered():
 	self.highlighted = true

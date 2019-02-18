@@ -17,7 +17,9 @@ func get_event_type():
 
 func _ready():
 	._ready()
-	anim_player.play("create")
+	
+	if !being_viewed:
+		anim_player.play("create")
 
 func _process(delta):
 	view_item_check()

@@ -16,8 +16,8 @@ var mouse_pos
 # Scene file used to create the object
 # Must be set to match for each inherited object
 var scene = null
+var pin = null
 
-onready var pin = $Pin
 onready var area = $Area2D
 onready var main = get_tree().get_root().get_node("Main")
 
@@ -26,6 +26,11 @@ func get_class():
 	return "draggable"
 
 func _ready():
+	if pin == null:
+		pin = $pin
+	if pin == null:
+		pin = $background/pin
+	
 	if being_viewed:
 		pin.hide()
 	
@@ -36,7 +41,7 @@ func _ready():
 
 func set_to_being_viewed():
 	being_viewed = true
-	scale = Vector2(0.75,0.75)
+	scale = Vector2(0.75, 0.75)
 	# Any onready vars need to be changed in ready
 
 func _process(delta):

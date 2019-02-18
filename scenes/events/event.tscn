@@ -5,9 +5,9 @@
 [ext_resource path="res://art/event_background.png" type="Texture" id=3]
 [ext_resource path="res://art/events/event_0_jam.png" type="Texture" id=4]
 [ext_resource path="res://fonts/danielbk.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://art/pin.png" type="Texture" id=6]
+[ext_resource path="res://scenes/pin.tscn" type="PackedScene" id=6]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 size = 36
 use_mipmaps = false
@@ -15,7 +15,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 260, 340 )
@@ -80,12 +80,12 @@ tracks/0/keys = {
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="background" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Image" type="Sprite" parent="background" index="0"]
 
@@ -109,7 +109,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = false
 bbcode_text = ""
@@ -124,11 +124,10 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Pin" type="Sprite" parent="background" index="2"]
+[node name="pin" parent="background" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( -223.804, -293.952 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( -223, -293 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
@@ -142,7 +141,7 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 
