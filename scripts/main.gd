@@ -92,7 +92,7 @@ func move_event_to_locked(event):
 			a_scene = EVENT_3_A
 			b_scene = EVENT_3_B
 		elif current_event == 3:
-			get_tree().change_scene("res://scenes/ending.tscn")
+			$ItemViewLayer/ItemViewBG/AnimationPlayer.play("fade_to_black")
 			return
 		
 		# Get new container for a locked event
@@ -119,7 +119,6 @@ func move_event_to_locked(event):
 		wrong_answer = event_b
 		
 		current_event += 1
-
 
 class DraggablesSorter: #Custom sorter
 	static func z_index(a, b): #Sort by z_index
@@ -149,3 +148,6 @@ func _top_draggable(): #Get the top draggable
 	for i in draggables: #Set all can_drag to false
 		i.can_drag = false
 	return draggables[0] #Return top draggable
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	get_tree().change_scene("res://scenes/ending.tscn")

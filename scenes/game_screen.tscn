@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://art/board_texture.png" type="Texture" id=2]
@@ -23,6 +23,37 @@ _sections_unfolded = [ "Resource" ]
 flags = 4
 gradient = SubResource( 1 )
 width = 2048
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "fade_to_black"
+length = 6.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="Main" type="Node" index="0"]
 
@@ -231,7 +262,6 @@ position = Vector2( 585, 320 )
 
 [node name="ItemViewLayer" type="CanvasLayer" parent="." index="6"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -252,7 +282,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0, 0, 0, 0.627451 )
-_sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Mouse", "Rect", "Size Flags" ]
+_sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Mouse", "Rect", "Size Flags", "Visibility" ]
 
 [node name="CenterContainer" type="CenterContainer" parent="ItemViewLayer/ItemViewBG" index="0"]
 
@@ -273,10 +303,21 @@ size_flags_vertical = 1
 use_top_left = false
 _sections_unfolded = [ "Rect", "Visibility" ]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ItemViewLayer/ItemViewBG" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/fade_to_black = SubResource( 3 )
+blend_times = [  ]
+
 [node name="strings" type="Node2D" parent="." index="7"]
 
-z_index = 2
+z_index = 5
 script = ExtResource( 7 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="crowbar" parent="." index="8" instance=ExtResource( 8 )]
 
@@ -293,5 +334,7 @@ position = Vector2( 875, 309 )
 [node name="clock" parent="." index="11" instance=ExtResource( 11 )]
 
 position = Vector2( 127, 371 )
+
+[connection signal="animation_finished" from="ItemViewLayer/ItemViewBG/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 
