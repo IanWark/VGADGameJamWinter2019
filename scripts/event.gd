@@ -15,6 +15,10 @@ func get_class():
 func get_event_type():
 	return EVENT
 
+func _ready():
+	._ready()
+	anim_player.play("create")
+
 func _process(delta):
 	view_item_check()
 	if !locked_event:
@@ -44,6 +48,10 @@ func check_for_submission():
 				# Move event down and place it a bit randomly to avoid overlap
 				position = area_parent.global_position + Vector2(randi()%41-21, 200 + randi()%41-21)
 
+func remove_event():
+	set_locked()
+	anim_player.play("destroy")
+
 func mouse_dragging(delta):
 	var event_unknown = main.event_unknown
 	if event_unknown != null:
@@ -54,4 +62,8 @@ func mouse_dragging(delta):
 func mouse_released():
 	check_for_submission()
 	.mouse_released()
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "destroy":
+		queue_free()
 

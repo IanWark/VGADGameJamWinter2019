@@ -73,7 +73,7 @@ func move_event_to_locked(event):
 		event_unknown.queue_free()
 		event_unknown = null
 		
-		wrong_answer.queue_free()
+		wrong_answer.remove_event()
 		
 		# Get new container for a locked event
 		var new_locked_container = event_pos_template.duplicate()
