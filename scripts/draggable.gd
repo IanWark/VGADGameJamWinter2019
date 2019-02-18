@@ -68,8 +68,6 @@ func dragging_checks(delta):
 		mouse_released()
 
 func mouse_dragging(delta):
-	timer += delta;
-	
 	if can_drag:
 		mouse_pos = get_viewport().get_mouse_position()
 
