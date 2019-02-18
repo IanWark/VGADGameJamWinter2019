@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://art/pin.png" type="Texture" id=1]
+[ext_resource path="res://scenes/pin.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -9,22 +10,33 @@ radius = 25.0
 
 [node name="pin" type="Sprite" index="0"]
 
+z_index = 1
 texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
+position = Vector2( 0.0603523, -0.06036 )
+scale = Vector2( 0.176868, 0.176868 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 3
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-z_index = 1
+position = Vector2( -0.427068, -0.372631 )
+scale = Vector2( 5.57891, 5.57891 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Z Index" ]
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
 
 

@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 250, 250 )
 
-[node name="clue" type="Sprite" index="0"]
+[node name="clue" type="Sprite"]
 
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
@@ -25,10 +25,12 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="pin" parent="." index="1" instance=ExtResource( 3 )]
 

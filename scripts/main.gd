@@ -82,3 +82,9 @@ func _top_draggable(): #Get the top draggable
 	for i in draggables: #Set all can_drag to false
 		i.can_drag = false
 	return draggables[0] #Return top draggable
+	
+func highlight(sprt):
+	sprt.highlighted = true
+
+func unhighlight(sprt):
+	sprt.highlighted = false
