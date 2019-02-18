@@ -4,7 +4,8 @@ func _ready():
 	._ready()
 	scene = "res://scenes/events/event_1_b.tscn"
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func mouse_dragging(delta):
+	var event_unknown = main.event_unknown
+	if event_unknown != null:
+		event_unknown.start_halo()
+	.mouse_dragging(delta)

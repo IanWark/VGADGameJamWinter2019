@@ -50,14 +50,7 @@ func view_item_check():
 
 func dragging_checks(delta):
 	if (dragging && Input.is_action_pressed("left_click")): #While dragging
-		if can_drag:
-			mouse_pos = get_viewport().get_mouse_position()
-
-			#Set the position of the draggable to
-			#mouse position + static mouse_to_center vector
-			var position = sumaVectores(mouse_pos, mouse_to_center)
-
-			set_position(position)
+		mouse_dragging(delta)
 			
 	elif (mouse_in && Input.is_action_pressed("left_click")): #When clicking
 		#First we set mouse_to_center as a static vector
@@ -73,6 +66,18 @@ func dragging_checks(delta):
 			
 	else: 
 		mouse_released()
+
+func mouse_dragging(delta):
+	timer += delta;
+	
+	if can_drag:
+		mouse_pos = get_viewport().get_mouse_position()
+
+		#Set the position of the draggable to
+		#mouse position + static mouse_to_center vector
+		var position = sumaVectores(mouse_pos, mouse_to_center)
+
+		set_position(position)
 
 # Called constantly whenever mouse is released
 func mouse_released():

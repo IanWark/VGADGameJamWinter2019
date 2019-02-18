@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://art/event_background.png" type="Texture" id=1]
+[ext_resource path="res://art/event_shape.png" type="Texture" id=1]
 [ext_resource path="res://scripts/event.gd" type="Script" id=2]
-[ext_resource path="res://art/events/event_0_jam.png" type="Texture" id=3]
-[ext_resource path="res://art/pin.png" type="Texture" id=4]
+[ext_resource path="res://art/event_background.png" type="Texture" id=3]
+[ext_resource path="res://art/events/event_0_jam.png" type="Texture" id=4]
+[ext_resource path="res://scenes/pin.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -36,7 +37,11 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Area2D" type="Area2D" parent="." index="0"]
+[node name="background" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -50,13 +55,13 @@ audio_bus_name = "Master"
 
 shape = SubResource( 1 )
 
-[node name="Image" type="Sprite" parent="." index="1"]
+[node name="Image" type="Sprite" parent="." index="2"]
 
 position = Vector2( 0, -70 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Label" type="Label" parent="." index="2"]
+[node name="Label" type="Label" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -79,13 +84,11 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors" ]
 
-[node name="Pin" type="Sprite" parent="." index="3"]
+[node name="pin" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( -223.804, -293.952 )
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( -224.028, -294.035 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
 root_node = NodePath("..")
 autoplay = ""

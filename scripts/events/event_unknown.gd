@@ -2,6 +2,8 @@ extends "res://scripts/event.gd"
 
 var correct_event # must be overwritten with what event is the solution
 
+onready var halo = $halo
+
 func _ready():
 	._ready()
 	scene = "res://scenes/events/event_unknown.tscn"
@@ -10,4 +12,13 @@ func _ready():
 # Event submits itself
 func submit(event):
 	return event.get_name() == correct_event
-		
+
+func start_halo():
+	if not anim_player.is_playing():
+		anim_player.play("halo")
+		halo.modulate = Color(0,0,0,0)
+		halo.visible = true
+
+func stop_halo():
+	halo.visible = false
+	anim_player.stop()
