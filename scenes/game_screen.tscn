@@ -22,7 +22,7 @@ flags = 4
 gradient = SubResource( 1 )
 width = 2048
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
@@ -273,9 +273,8 @@ _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="strings" type="Node2D" parent="." index="7"]
 
-z_index = 1
+z_index = 2
 script = ExtResource( 7 )
-_sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="crowbar" parent="." index="8" instance=ExtResource( 8 )]
 
