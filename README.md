@@ -12,6 +12,12 @@ click and drag the event to the highlighted submission area to see if you're rig
 
 ## Credits
 
+### Frog Squad
+
+Alexander Ozero: Programming
+Bella Fuccaro: Art
+Ian Wark: Programming
+
 ### Fonts
 
 Tox Typewriter by junkohanhero
