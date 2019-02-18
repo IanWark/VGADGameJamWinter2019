@@ -6,7 +6,7 @@
 [ext_resource path="res://fonts/ANUDI___.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://fonts/ArchitectsDaughter.ttf" type="DynamicFontData" id=5]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 
 size = 40
 use_mipmaps = true
@@ -14,7 +14,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 
 resource_name = "typing"
 length = 8.0
@@ -45,7 +45,7 @@ tracks/1/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 
 size = 60
 use_mipmaps = false
@@ -53,7 +53,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 
 size = 20
 use_mipmaps = true
@@ -61,9 +61,8 @@ use_filter = true
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
-resource_name = "appear"
 length = 4.0
 loop = false
 step = 0.1
@@ -80,7 +79,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Ending Slide" type="ColorRect"]
+[node name="Ending Slide" type="ColorRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -151,9 +150,9 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "Yep, that's gotta be it... 
-That's how he got away with......"
+That's how he got away with..."
 autowrap = true
 percent_visible = 0.961538
 lines_skipped = 0
@@ -167,7 +166,7 @@ autoplay = "typing"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/typing = SubResource( 5 )
+anims/typing = SubResource( 2 )
 blend_times = [  ]
 
 [node name="THE_PHOENIX_SAPPHIRE" type="Label" parent="." index="2"]
@@ -186,7 +185,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_shadow = Color( 0.67451, 0.0862745, 0.988235, 1 )
 text = "THE PHOENIX SAPPHIRE"
 align = 1
@@ -213,7 +212,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "Click to continue"
 percent_visible = 1.0
 lines_skipped = 0
@@ -227,7 +226,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/appear = SubResource( 3 )
+anims/appear = SubResource( 5 )
 blend_times = [  ]
 
 [connection signal="animation_finished" from="handwritten/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
