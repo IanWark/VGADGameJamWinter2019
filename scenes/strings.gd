@@ -43,3 +43,13 @@ func _draw():
 		data = string.get_data()
 		draw_line(data[0].global_position, data[1].global_position, COLOR, THICKNESS)
 	#draw_line(Vector2(0,0), get_global_mouse_position(), COLOR, THICKNESS)
+	
+func string_exists(parent1, parent2):
+	var data
+	for string in strings:
+		data = string.get_data()
+		if (data[2] == parent1 || data[3] == parent1):
+			if (data[2] == parent2 || data[3] == parent2):
+				strings.erase(string)
+				return true
+	return false
