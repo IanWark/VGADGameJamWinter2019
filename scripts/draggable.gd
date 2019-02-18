@@ -17,13 +17,9 @@ var mouse_pos
 # Must be set to match for each inherited object
 var scene = null
 
-onready var pin = $Pin
+onready var pin = $pin
 onready var area = $Area2D
 onready var main = get_tree().get_root().get_node("Main")
-
-# Click vs Drag timer
-var timer= 0
-var timer_wait_time = 0.06
 
 # This is so we can check if an object is a clue
 func get_class():
@@ -72,8 +68,6 @@ func dragging_checks(delta):
 		mouse_released()
 
 func mouse_dragging(delta):
-	timer += delta;
-	
 	if can_drag:
 		mouse_pos = get_viewport().get_mouse_position()
 
@@ -85,9 +79,6 @@ func mouse_dragging(delta):
 
 # Called constantly whenever mouse is released
 func mouse_released():
-	if timer > 0 && timer <= timer_wait_time:
-		print("click")
-	timer = 0
 	mouse_to_center_set = false #Set this to false so we can set mouse_to_center again
 	z_index = DEFAULT_Z_INDEX
 	dragging = false
