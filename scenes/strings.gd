@@ -14,19 +14,19 @@ var pin1
 var pin2
 
 class RedString:
-	var _pin_pos1
-	var _pin_pos2
+	var _pin1
+	var _pin2
 	var _event
 	var _clue
 
-	func _init(pin_pos1, pin_pos2, event, clue):
-		self._pin_pos1 = pin_pos1
-		self._pin_pos2 = pin_pos2
+	func _init(pin1, pin2, event, clue):
+		self._pin1 = pin1
+		self._pin2 = pin2
 		self._event = event
 		self._clue = clue
 
 	func get_data():
-		return [self._pin_pos1, self._pin_pos2, self._event, self._clue]
+		return [self._pin1, self._pin2, self._event, self._clue]
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
