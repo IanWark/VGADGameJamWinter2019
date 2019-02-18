@@ -7,11 +7,16 @@ const EVENT_2_UNKNOWN = "res://scenes/events/event_2_unknown.tscn"
 const EVENT_2_A = "res://scenes/events/event_2_a.tscn"
 const EVENT_2_B = "res://scenes/events/event_2_b.tscn"
 
+const EVENT_3_UNKNOWN = "res://scenes/events/event_3_unknown.tscn"
+const EVENT_3_A = "res://scenes/events/event_3_a.tscn"
+const EVENT_3_B = "res://scenes/events/event_3_b.tscn"
+
 var draggables = []
 var top_draggable = null
 var dragging = false
 var top_set = false
 var viewed_item = null
+var current_event = 1
 
 var event_unknown
 
@@ -75,28 +80,45 @@ func move_event_to_locked(event):
 		
 		wrong_answer.remove_event()
 		
+		var unknown_scene 
+		var a_scene
+		var b_scene
+		if current_event == 1:
+			unknown_scene = EVENT_2_UNKNOWN
+			a_scene = EVENT_2_A
+			b_scene = EVENT_2_B
+		elif current_event == 2:
+			unknown_scene = EVENT_3_UNKNOWN
+			a_scene = EVENT_3_A
+			b_scene = EVENT_3_B
+		elif current_event == 3:
+			get_tree().change_scene("res://scenes/ending.tscn")
+			return
+		
 		# Get new container for a locked event
 		var new_locked_container = event_pos_template.duplicate()
 		new_locked_container.get_node("Control/event_0_JAM").queue_free()
 		
 		# Create new unknown event and add it to container
-		event_unknown = load(EVENT_2_UNKNOWN).instance()
+		event_unknown = load(unknown_scene).instance()
 		new_locked_container.get_node("Control").add_child(event_unknown)
 		
 		# Add container to locked event sequence
 		event_sequence.add_child(new_locked_container)
 		
 		# Create the new possible events
-		var event_2_a = load(EVENT_2_A).instance()
-		add_child(event_2_a)
-		event_2_a.global_position = new_event_pos_1.global_position 
+		var event_a = load(a_scene).instance()
+		add_child(event_a)
+		event_a.global_position = new_event_pos_1.global_position 
 		
-		var event_2_b = load(EVENT_2_B).instance()
-		add_child(event_2_b)
-		event_2_b.global_position = new_event_pos_2.global_position 
+		var event_b = load(b_scene).instance()
+		add_child(event_b)
+		event_b.global_position = new_event_pos_2.global_position 
 		
 		# Set which answer is wrong so we can delete it later
-		wrong_answer = event_2_b
+		wrong_answer = event_b
+		
+		current_event += 1
 
 
 class DraggablesSorter: #Custom sorter
