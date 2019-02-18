@@ -1,6 +1,5 @@
-# VGADGameJamWinter2019
 # Heist of the Phoenix Sapphire
-### Theme: String
+### VGAD Game Jam Winter 2019 - Theme: String
 
 ## Instructions
 
