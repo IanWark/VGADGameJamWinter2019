@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://art/board_texture.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/clues/crowbar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/clues/key.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/clues/panel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/clues/clock.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Gradient" id=1]
 
@@ -23,7 +24,7 @@ flags = 4
 gradient = SubResource( 1 )
 width = 2048
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
@@ -288,5 +289,9 @@ position = Vector2( 627.469, 500.335 )
 [node name="clue" parent="." index="10" instance=ExtResource( 10 )]
 
 position = Vector2( 875, 309 )
+
+[node name="clue2" parent="." index="11" instance=ExtResource( 11 )]
+
+position = Vector2( 127, 371 )
 
 
