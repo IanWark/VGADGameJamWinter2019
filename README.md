@@ -20,8 +20,22 @@ Ian Wark: Programming
 
 ### Fonts
 
-Tox Typewriter by junkohanhero
-dafont.com/junkohanhero.d1293
+Tox Typewriter by junkohanhero   
+dafont.com/junkohanhero.d1293    
+
+AnuDaw by Nyek! Pinoy Komik Fonts      
+https://www.fontsquirrel.com/fonts/list/foundry/nyek-pinoy-komik-fonts   
+License: Nyek! License v1.00 https://www.fontsquirrel.com/license/AnuDaw   
+
+Architects Daughter by Kimberly Geswein     
+https://www.fontsquirrel.com/fonts/list/foundry/kimberly-geswein   
+License: SIL Open Font License v1.10 https://www.fontsquirrel.com/license/architects-daughter   
+
+TrashHand by Luce Avérous   
+https://www.dafont.com/luce-averous.d598   
+
+Daniel by Daniel Midgley   
+https://www.dafont.com/daniel-midgley.d483   
 
 ### Music
 
@@ -33,5 +47,5 @@ License: CC BY 3.0 https://creativecommons.org/licenses/by/3.0/
 Dances and Dames by Kevin MacLeod https://incompetech.com/   
 License: CC BY 3.0 https://creativecommons.org/licenses/by/3.0/   
 
-Just Nasty Kevin MacLeod https://incompetech.com
-License: CC BY 3.0 https://creativecommons.org/licenses/by/3.0/
+The Fourth Colour by King Gizzard & The Lizard Wizard   
+https://kinggizzardandthelizardwizard.com/polygondwanaland/index.html    
