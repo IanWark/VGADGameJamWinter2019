@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Heist of the Phoenix Sapphire"
+config/name="Case of the Phoenix Sapphire"
 run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://art/icon.png"
 run/name="Heist of the Phoenix Sapphire"
