@@ -11,7 +11,8 @@ config_version=3
 [application]
 
 config/name="Heist of the Phoenix Sapphire"
-run/main_scene="res://scenes/game_screen.tscn"
+run/main_scene="res://scenes/MainMenu.tscn"
+boot_splash/image="res://art/splash.png"
 config/icon="res://art/icon.png"
 
 [display]
