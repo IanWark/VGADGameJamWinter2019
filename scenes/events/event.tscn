@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/event.gd" type="Script" id=2]
 [ext_resource path="res://art/event_background.png" type="Texture" id=3]
 [ext_resource path="res://art/events/event_0_jam.png" type="Texture" id=4]
-[ext_resource path="res://art/pin.png" type="Texture" id=5]
+[ext_resource path="res://scenes/pin.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="event" type="Sprite"]
+[node name="event" type="Sprite" index="0"]
 
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
@@ -84,11 +84,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors" ]
 
-[node name="Pin" type="Sprite" parent="." index="4"]
+[node name="pin" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( -223.804, -293.952 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( -224.028, -294.035 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
