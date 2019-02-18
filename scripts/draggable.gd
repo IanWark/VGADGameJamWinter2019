@@ -20,6 +20,7 @@ var pin = null
 
 onready var area = $Area2D
 onready var main = get_tree().get_root().get_node("Main")
+onready var page = get_tree().get_root().get_node("Main/page")
 
 # This is so we can check if an object is a clue
 func get_class():
@@ -32,6 +33,7 @@ func _ready():
 		pin = $background/pin
 	
 	if being_viewed:
+		page.play()
 		pin.hide()
 	
 	# Prevents multidrag

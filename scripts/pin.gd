@@ -1,6 +1,7 @@
 extends Sprite
 
 onready var s = get_tree().get_root().get_node("Main/strings")
+onready var tap = get_tree().get_root().get_node("Main/tap")
 
 var highlighted = false
 var just_clicked = false
@@ -13,6 +14,7 @@ func _ready():
 func _process(delta):
 	if (self.highlighted && Input.is_action_pressed("left_click")): #When clicking
 		if(!just_clicked):
+			tap.play()
 			just_clicked = true
 			s.creating_string = true
 			
