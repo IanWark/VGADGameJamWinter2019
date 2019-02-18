@@ -5,8 +5,11 @@ const EVENT_UNKNOWN = "event_unknown"
 
 var locked_event = false
 var finished_event = false
+var clues = []
 
 onready var anim_player = $AnimationPlayer
+onready var label = $background/Label
+onready var strings = get_tree().get_root().get_node("Main/strings")
 
 # This is so we can check if an object is a clue
 func get_class():
@@ -71,3 +74,15 @@ func remove_event():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "destroy":
 		queue_free()
+
+func clue_attached(clue):
+	clues.append(clue.get_name())
+	set_text()
+
+func clue_detached(clue):
+	clues.remove(clues.find(clue.get_name()))
+	print(clues)
+	set_text()
+
+func set_text():
+	pass

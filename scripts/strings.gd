@@ -24,6 +24,8 @@ class RedString:
 		self._pin2 = pin2
 		self._event = event
 		self._clue = clue
+		
+		event.clue_attached(clue)
 
 	func get_data():
 		return [self._pin1, self._pin2, self._event, self._clue]
@@ -50,9 +52,18 @@ func delete_string(string1, string2):
 		data = string.get_data()
 		if (data[2] == string1 || data[3] == string1):
 			if (data[2] == string2 || data[3] == string2):
+				string._event.clue_detached(string._clue)
 				strings.erase(string)
 				return true
 	return false
+
+func delete_connected_strings(item):
+	var data
+	for string in strings:
+		data = string.get_data()
+		if (data[2] == item || data[3] == item):
+			string.event.clue_detached(string.clue)
+			strings.erase(string)
 
 func string_exists(string1, string2):
 	var data
