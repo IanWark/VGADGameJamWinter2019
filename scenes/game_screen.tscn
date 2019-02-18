@@ -24,7 +24,7 @@ flags = 4
 gradient = SubResource( 1 )
 width = 2048
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
@@ -286,11 +286,11 @@ position = Vector2( 917.291, 501.961 )
 
 position = Vector2( 627.469, 500.335 )
 
-[node name="clue" parent="." index="10" instance=ExtResource( 10 )]
+[node name="panel" parent="." index="10" instance=ExtResource( 10 )]
 
 position = Vector2( 875, 309 )
 
-[node name="clue2" parent="." index="11" instance=ExtResource( 11 )]
+[node name="clock" parent="." index="11" instance=ExtResource( 11 )]
 
 position = Vector2( 127, 371 )
 

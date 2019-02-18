@@ -17,7 +17,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 custom_solver_bias = 0.0
 extents = Vector2( 250, 312 )
 
-[node name="clue" index="0" instance=ExtResource( 1 )]
+[node name="panel" instance=ExtResource( 1 )]
 
 texture = null
 
