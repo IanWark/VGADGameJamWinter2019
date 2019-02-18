@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/clue_crowbar.jpg-50f4c895ebf7587c60c395848e026d61.stex"
+path="res://.import/clue_crowbar.png-793a1e8e1963847535832af4dcf0d173.stex"
 
 [deps]
 
-source_file="res://art/clue_crowbar.jpg"
-dest_files=[ "res://.import/clue_crowbar.jpg-50f4c895ebf7587c60c395848e026d61.stex" ]
+source_file="res://art/clue_crowbar.png"
+dest_files=[ "res://.import/clue_crowbar.png-793a1e8e1963847535832af4dcf0d173.stex" ]
 
 [params]
 

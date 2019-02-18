@@ -24,7 +24,7 @@ flags = 4
 gradient = SubResource( 1 )
 width = 2048
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Margin" ]
