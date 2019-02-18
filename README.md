@@ -14,9 +14,9 @@ click and drag the event to the highlighted submission area to see if you're rig
 
 ### Frog Squad
 
-Alexander Ozero: Programming
-Bella Fuccaro: Art
-Ian Wark: Programming
+Alexander Ozero: Programming  
+Bella Fuccaro: Art  
+Ian Wark: Programming  
 
 ### Fonts
 
