@@ -10,6 +10,8 @@ that an event is the one that happened, left-click on the pins in their respecti
 If you make a mistake, click on two connected pins to remove their string. When you think you've proven an event took place,
 click and drag the event to the highlighted submission area to see if you're right. Good luck, detective!
 
+itch.io page: https://aozero.itch.io/case-of-the-phoenix-sapphire
+
 ## Credits
 
 ### Frog Squad
